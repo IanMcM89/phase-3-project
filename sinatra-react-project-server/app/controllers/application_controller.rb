@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
+  # Category Routes
   get '/categories' do
     Category.all.to_json(only: [:id, :name])
   end
