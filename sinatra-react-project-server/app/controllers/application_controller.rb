@@ -31,4 +31,14 @@ class ApplicationController < Sinatra::Base
     category.to_json(only: [:id, :name])
   end
 
+  # Recipe Routes
+
+  get '/recipes' do
+    Recipe.all.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+  end
+
+  get '/recipes/:id' do
+    Recipe.find(params[:id]).to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+  end
+
 end
