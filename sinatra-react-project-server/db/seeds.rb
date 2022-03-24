@@ -37,13 +37,13 @@ Recipe.create(
 )
 
 Recipe.create(
-    title: "Pork Tenderloin Stew", 
+    title: "Hearty Pork Sausage Stew", 
     image_url: "",
     created_by: "IanMcM89",
     category_id: 2,
-    description: "This easy slow cooked pork tenderloin is a set-it-and-forget-it meal that's worth the wait and will melt in your mouth!",
+    description: "This easy slow cooked pork tenderloin is a set-it-and-forget-it meal that's worth the wait!",
     ingredients: [
-        "1 Pork Tenderloin", 
+        "1 Pack Pork Sausage Links (Sliced)", 
         "4 Cups Chicken Broth", 
         "2 Diced Russet Potatoes",
         "1 Cup Chopped Carrots",
@@ -60,7 +60,7 @@ Recipe.create(
     ],
     steps: [
         "Combine all ingredients in a crock pot and set heat to high for 4 to 6 hours or until potatoes are soft and meat is cooked through, stirring occosaionally.",
-        "Shred pork with two forks and serve with green onion garnish."
+        "Serve with green onion garnish."
     ],
 )
 
@@ -103,7 +103,7 @@ Recipe.create(
         "3 Garlic Cloves",
         "1/2 Cup Chopped Red Onion",
         "1/2 Cup Chopped Tomato",
-        " 1/4 Cup Chopped Cucumber",
+        " 2 Cup Spinach",
         "1/2 TSP Crushed Red Pepper Flakes",
         "1/2 TSP Garlic Powder",
         "Fresh chopped basil",
