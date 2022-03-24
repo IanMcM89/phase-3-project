@@ -41,4 +41,36 @@ class ApplicationController < Sinatra::Base
     Recipe.find(params[:id]).to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
   end
 
+  post '/recipes' do
+    recipe = Recipe.create(
+      title: params[:title],
+      image_url: params[:image_url],
+      created_by: params[:created_by],
+      category_id: params[:category_id],
+      description: params[:description],
+      ingredients: params[:ingredients],
+      steps: params[:steps]
+    )
+    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+  end
+
+  patch '/recipes/:id' do
+    recipe = Recipe.find(params[:id])
+    recipe.update(
+      title: params[:title],
+      image_url: params[:image_url],
+      created_by: params[:created_by],
+      category_id: params[:category_id],
+      description: params[:description],
+      ingredients: params[:ingredients],
+      steps: params[:steps]
+    )
+    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+  end
+
+  delete "/recipes/:id" do
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+  end
 end
