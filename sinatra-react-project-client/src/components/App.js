@@ -8,13 +8,13 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([])
 
+  //Fetch recipe data from backend and set recipes state to fetched recipe data:
   useEffect(() => {
     fetch("http://localhost:9292/recipes")
     .then(r => r.json())
     .then(recipeData => {
       setRecipes(recipeData);
       setFilteredRecipes(recipeData);
-      console.log(recipes)
     })
   },[]);
 
@@ -23,7 +23,7 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path="/">
-          <Main/>
+          <Main recipes={filteredRecipes}/>
         </Route>
       </Switch>
     </div>
