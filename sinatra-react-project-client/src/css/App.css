@@ -12,3 +12,13 @@
   height: 85vh;
   margin: 0;
 }
+
+.app-main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: auto;
+  width: 98%;
+  height: auto;
+  margin: 2%;
+}
