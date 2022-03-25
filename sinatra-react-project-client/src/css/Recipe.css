@@ -1,0 +1,26 @@
+.recipe-card {
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+    height: 50%;
+    margin: 1%;
+}
+
+.recipe-card h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(105, 105, 105, 0.486);
+    backdrop-filter: blur(20px);
+    border-radius: 25px 0 0 25px;
+    width: 40%;
+    height: 100%;
+    margin: 0;
+}
