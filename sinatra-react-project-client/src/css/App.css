@@ -1,11 +1,5 @@
-body {
-  background: linear-gradient(175deg, royalblue 30%, white calc(30% + 2px));
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-}
-
 #app {
+  background: linear-gradient(177deg, orange 25%, rgba(255, 255, 255, 0.322) calc(25% + 2px));
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -14,6 +8,6 @@ body {
 #app-main {
   display: flex;
   width: 100vw;
-  height: 80vh;
+  height: 85vh;
   margin: 0;
 }
