@@ -1,12 +1,14 @@
 import React from "react";
+import Recipe from './Recipe';
 import '../css/App.css';
 
 function Main({ recipes }) {
-  const recipesToBeDisplayed = recipes.filter(recipe => console.log(recipe))
+  //Returns Recipe component for each recipe in fetched recipe data:
+  const recipesToBeDisplayed = recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe}/>)
 
   return (
     <div id="app-main">
-      <div className="recipe-card-table">
+      <div className="app-main-container">
           {recipesToBeDisplayed}
       </div>
     </div>
