@@ -5,8 +5,7 @@ function Header() {
     return (
       <div id="app-header">
         <div className="header-title">
-            <img src="./images/icons/menu-icon.png" alt="Menu Icon"/>
-            <h1>My Recipes</h1>
+            
         </div>
       </div>
     );
