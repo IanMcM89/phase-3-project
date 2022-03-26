@@ -8,13 +8,14 @@
 
 #text-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 50%;
     height: auto;
     margin: 0;
 }
 
-#text-container div {
+#text-container-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -24,13 +25,13 @@
     margin: 0;
 }
 
-#text-container img {
+img {
     width: 200px;
     height: 200px;
     margin: 0;
 }
 
-#text-container h1{
+h1{
     display: flex;
     justify-content: left;
     align-items: center;
@@ -40,12 +41,44 @@
     margin: 2%;
 }
 
+#text-container-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+h2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: gray;
+    font-size: 50px;
+    width: fit-content;
+    height: fit-content;
+    margin: 2%;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    text-align: center;
+    width: 84%;
+    height: auto;
+    padding: 8%;
+}
+
 #image-container {
     background-image: linear-gradient(80deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 40%), url("/home/ian/code/labs/phase3/phase-3-project/sinatra-react-project-client/public/images/background.jpg");
     background-position: center;
     background-size: cover;
     display: flex;
-    width: 60%;
+    width: 50%;
     height: auto;
     margin: 0;
 }
