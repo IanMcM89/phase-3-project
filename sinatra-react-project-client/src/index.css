@@ -1,7 +1,4 @@
 body {
-    background-image: url("/home/ian/code/labs/phase3/phase-3-project/sinatra-react-project-client/public/images/backround.jpg");
-    background-size: cover;
-    backdrop-filter: blur(4px);
     width: 100vw;
     height: 100vh;
     margin: 0;
