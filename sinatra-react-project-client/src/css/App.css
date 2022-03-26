@@ -1,15 +1,14 @@
 #app {
-  background: linear-gradient(177deg, orange 25%, rgba(255, 255, 255, 0.322) calc(25% + 2px));
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
-#app-main {
+.app-main {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 85vh;
+  height: 90vh;
   margin: 0;
 }
 
