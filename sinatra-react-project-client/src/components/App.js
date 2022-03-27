@@ -23,7 +23,7 @@ function App() {
     <div id="app">
       <Header/>
       <Switch>
-        <Route exact path="/Recipes">
+        <Route exact path="/recipes">
           <RecipesPage recipes={filteredRecipes}/>
         </Route>
         <Route exact path="/">
