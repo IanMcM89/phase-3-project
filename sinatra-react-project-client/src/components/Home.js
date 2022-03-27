@@ -1,13 +1,7 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
 import '../css/Home.css';
 
 function Home() {
-  const history = useHistory();
-
-  //Redirects route path based on case provided by tab text content:
-  const handleClick = e => history.push("/categories");
-
   return (
     <main className="app-main">
       <div id="home-div">
@@ -21,7 +15,7 @@ function Home() {
             <p>Tired of history lessons and endless scrolling every time you search for a recipe online? NNR provides only recipes and ingredients, without all the...extra...information. Simply choose a category to get started or browse through the recipes catalogue.</p>
           </section>
           <section id="text-container-button">
-            <button onClick={handleClick}>Get Started</button>
+            <a href="/categories" class="button">Get Started</a>
           </section>
         </div>
         <figure id="image-container"/>
