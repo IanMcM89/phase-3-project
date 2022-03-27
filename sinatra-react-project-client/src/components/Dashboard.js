@@ -9,7 +9,7 @@ function Dashboard() {
     function handleClick(e) {
         switch (e.target.textContent) {
             case 'Create':
-                history.push("/post")
+                history.push("/create")
                 break;
             case 'Recipes':
                 history.push("/recipes")
