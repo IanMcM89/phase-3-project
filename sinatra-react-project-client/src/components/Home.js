@@ -1,21 +1,30 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 import '../css/Home.css';
 
 function Home() {
+  const history = useHistory();
+
+  //Redirects route path based on case provided by tab text content:
+  const handleClick = e => history.push("/categories");
+
   return (
     <main className="app-main">
       <div id="home-div">
-        <section id="text-container">
-          <div id="text-container-header">
+        <div id="text-container">
+          <section id="text-container-header">
             <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-            <h1>Recipes.</h1>
-          </div>
-          <div id="text-container-description">
-            <h2>Ut enim ad minim veniam</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
-          </div>
-        </section>
-        <section id="image-container"/>
+            <h1>NNR.</h1>
+          </section>
+          <section id="text-container-description">
+            <h2>No Nonsense. All Recipes.</h2>
+            <p>Tired of history lessons and endless scrolling every time you search for a recipe online? NNR provides only recipes and ingredients, without all the...extra...information. Simply choose a category to get started or browse through the recipes catalogue.</p>
+          </section>
+          <section id="text-container-button">
+            <button onClick={handleClick}>Get Started</button>
+          </section>
+        </div>
+        <figure id="image-container"/>
       </div>
     </main>
   );
