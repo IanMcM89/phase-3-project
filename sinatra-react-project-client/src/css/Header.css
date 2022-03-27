@@ -39,7 +39,8 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
     width: 20%;
     padding-top: 10px;
     padding-bottom: 7px;
@@ -47,5 +48,5 @@
 }
   
 #dashboard button:hover {
-    border-bottom: black solid 2px;
+    border-bottom: forestgreen solid 2px;
 }
