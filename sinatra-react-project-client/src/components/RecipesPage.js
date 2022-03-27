@@ -1,6 +1,6 @@
 import React from "react";
 import Recipe from './Recipe';
-import '../css/App.css';
+import '../css/Recipe.css';
 
 function RecipesPage({ recipes }) {
   //Returns Recipe component for each recipe in fetched recipe data:
@@ -8,7 +8,7 @@ function RecipesPage({ recipes }) {
 
   return (
     <main className="app-main">
-      <div className="app-main-container">
+      <div id="recipes-container">
           {/* {recipesToBeDisplayed} */}
       </div>
     </main>
