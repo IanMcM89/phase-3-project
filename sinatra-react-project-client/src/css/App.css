@@ -19,3 +19,94 @@
   margin: 0;
   overflow: hidden;
 }
+
+/* Animation Keyframes */
+@keyframes slideIn {
+  0% {
+      transform: translateX(500px) scale(.2);
+  }
+  100% {
+      transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(300px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+      transform: translateY(-1000px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+      transform: translateX(-1000px) scale(.2);
+  }
+  100% {
+      transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes expand {
+  0% {
+      transform: translateX(1400px);
+  }
+  100% {
+      transform: translateX(0px);
+  }
+}
+
+@keyframes appear {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes swoopLeft {
+  0% {
+      transform: translateX(0px);
+  }
+  100% {
+      transform: translateX(-2000px);
+  }
+}
+
+@keyframes swoopRight {
+  0% {
+      transform: translateX(0px);
+  }
+  100% {
+      transform: translateX(2000px);
+  }
+}
+
+@keyframes hoverIn {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(.9);
+  }
+}
+
+@keyframes hoverOut {
+  0% {
+      transform: scale(.9);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
