@@ -24,7 +24,7 @@ function Home() {
         </div>
         <div className="container_img"/>
       </div>
-      <div class="overlay"></div>
+      <div class="overlay-left"></div>
     </main>
   );
 }
