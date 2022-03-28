@@ -16,7 +16,7 @@ function RecipesPage({ recipes }) {
           {recipesToBeDisplayed}
         </div>
       </div>
-      <div class="overlay"/>
+      <div className="overlay"/>
     </main>
   );
 }
