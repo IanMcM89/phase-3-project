@@ -6,7 +6,7 @@ function Recipe({ recipe }) {
     <div className="recipe-card" style={{ 
         backgroundImage: `url(${recipe.image_url})` 
       }}>
-      <h1>{recipe.title}</h1>
+      <h1></h1>
     </div>
   );
 }
