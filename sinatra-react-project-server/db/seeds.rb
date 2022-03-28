@@ -171,4 +171,25 @@ Recipe.create(
     ],
 )
 
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+Recipe.create(title: "test")
+
 puts "✅ Done seeding!"
