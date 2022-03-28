@@ -9,14 +9,14 @@ function RecipesPage({ recipes }) {
   return (
     <main className="app-main">
       <div className="main-container">
-        <div className="recipes-header">
+        <div className="main-header">
           <h2>All Recipes</h2>
         </div>
-        <div className="recipes-container">
+        <div className="main-table">
           {recipesToBeDisplayed}
         </div>
       </div>
-      <div className="overlay"/>
+      <div className="overlay-left"/>
     </main>
   );
 }
