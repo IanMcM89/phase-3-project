@@ -8,9 +8,15 @@ function RecipesPage({ recipes }) {
 
   return (
     <main className="app-main">
-      <div id="recipes-container">
-          {/* {recipesToBeDisplayed} */}
+      <div className="main-container">
+        <div className="recipes-header">
+          <h2>All Recipes</h2>
+        </div>
+        <div className="recipes-container">
+          {recipesToBeDisplayed}
+        </div>
       </div>
+      <div class="overlay"/>
     </main>
   );
 }
