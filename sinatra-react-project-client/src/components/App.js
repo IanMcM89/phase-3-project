@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from './Header';
 import Home from './Home';
 import RecipesPage from './RecipesPage';
+import CategoriesPage from './CategoriesPage';
 import { Route, Switch } from 'react-router-dom';
 import '../css/App.css';
 
@@ -23,6 +24,9 @@ function App() {
     <div id="app">
       <Header/>
       <Switch>
+        <Route exact path="/categories">
+          <CategoriesPage/>
+        </Route>
         <Route exact path="/recipes">
           <RecipesPage recipes={filteredRecipes}/>
         </Route>
