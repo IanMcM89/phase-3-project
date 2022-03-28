@@ -10,24 +10,25 @@
     background-color: var(--secondary-color);
     position: relative;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* animation: expand .8s ease forwards; */
 }
 
 .recipes-header {
     display: flex;
-    width: 80%;
+    width: 90%;
     height: 10%;
-    margin: auto;
+    margin: 1% auto 0 auto;
     overflow: hidden;
 }
 
 .recipes-header h2 {
+    color: forestgreen;
     display: flex;
     font-family: inherit;
     font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 50%;
     height: 100%;
     transition: all .8s ease;
     animation: slideDown 1.8s ease forwards;
@@ -36,39 +37,71 @@
 .recipes-container {
     display: flex;
     flex-wrap: wrap;
-    font-family: inherit;
     justify-content: center;
-    width: 80%;
-    height: 90%;
-    margin: auto;
+    width: 90%;
+    height: 80%;
+    margin: 0 auto auto auto;
+    animation: appear 3.2s ease forwards;
+    overflow-y: auto;
 }
 
 .recipe-card {
-    background-color: gray;
+    background-color: darkgrey;
     background-size: cover;
     background-position: center;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     align-items: flex-end;
-    width: 20%;
-    height: auto;
-    margin: 1%;
+    width: 250px;
+    height: 250px;
+    margin: 5px;
     align-content: center;
     overflow: hidden;
-    animation: appear 0.8s ease forwards;
+    animation: hoverOut 0.4s ease forwards;
 }
 
-.recipe-card h1 {
+.recipe-card:hover{
+    animation: hoverIn 0.4s ease forwards;
+    width: 240px;
+    height: 240px;
+    margin: 10px;
+}
+
+.recipe-card p {
     display: flex;
-    justify-content: flex;
+    justify-content: center;
     align-items: center;
+    color: white;
     background-color: rgba(105, 105, 105, 0.486);
     backdrop-filter: blur(20px);
     width: 100%;
     height: 25%;
     margin: 0;
+    animation: slideUp 1.2s ease forwards;
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #40a042 #b0b0b0;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #b0b0b03f;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #40a042ad;
+    border-radius: 10px;
+    border: 1px none #86ea96;
+  }
 
 @keyframes slideDown {
     0% {
@@ -91,7 +124,25 @@
 
 @keyframes appear {
     0% {
-        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hoverIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(.98);
+    }
+}
+
+@keyframes hoverOut {
+    0% {
+        transform: scale(.98);
     }
     100% {
         transform: scale(1);
