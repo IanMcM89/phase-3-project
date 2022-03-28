@@ -50,5 +50,5 @@
 }
   
 #dashboard button:hover {
-    border-bottom: forestgreen solid 2px;
+    background-color: forestgreen;
 }
