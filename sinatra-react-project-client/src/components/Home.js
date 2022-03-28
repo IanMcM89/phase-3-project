@@ -9,7 +9,7 @@ function Home() {
           <div class="container_content_inner">
             <div class="title">
               <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-              <h1>NNR.</h1>
+              <h1>Recipes.</h1>
             </div>
             <div class="par">
               <h2>No Nonsense. All Recipes.</h2>
@@ -22,8 +22,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div class="container_img">
-        </div>
+        <div className="container_img"/>
       </div>
       <div class="overlay"></div>
     </main>
