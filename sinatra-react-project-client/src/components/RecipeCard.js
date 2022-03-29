@@ -1,9 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import '../css/Recipe.css';
 
-function Recipe({ recipe }) {
-  const [randomInteger] = useState(Math.ceil(Math.random() * 5));
-
+function RecipeCard({ recipe }) {
   return (
     <div className="recipe-card">
       <div className="recipe-card-content" style={{backgroundImage: `url(${recipe.image_url})`}}>
@@ -13,4 +11,4 @@ function Recipe({ recipe }) {
   );
 }
 
-export default Recipe;
+export default RecipeCard;

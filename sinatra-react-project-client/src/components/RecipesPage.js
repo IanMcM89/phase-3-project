@@ -1,11 +1,11 @@
 import React from "react";
-import Recipe from './Recipe';
+import RecipeCard from './RecipeCard';
 import '../css/Recipe.css';
 
 function RecipesPage({ recipes }) {
 
   //Returns Recipe component for each recipe in fetched recipe data:
-  const recipesToBeDisplayed = recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />)
+  const recipesToBeDisplayed = recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
 
   return (
     <main className="app-main">
