@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/Category.css';
 
-function Category({ category, integer }) {
+function CategoryCard({ category, integer }) {
     return (
         <div className={`category-${integer}`}>
             <div className={`category-card-${integer}`}>
@@ -11,4 +11,4 @@ function Category({ category, integer }) {
     );
 }
 
-export default Category;
+export default CategoryCard;

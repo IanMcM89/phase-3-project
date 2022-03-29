@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Category from './Category';
+import CategoryCard from './CategoryCard';
 import '../css/Category.css';
 
 function CategoriesPage() {
@@ -15,7 +15,7 @@ function CategoriesPage() {
 
   //Returns Recipe component for each recipe in fetched recipe data:
   const categoriesToBeDisplayed = categories.map(category => {
-    return <Category key={category.id} category={category} integer={category.id} />
+    return <CategoryCard key={category.id} category={category} integer={category.id} />
   });
 
   return (
