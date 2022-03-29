@@ -18,14 +18,21 @@ function App() {
       setRecipes(recipeData);
       setFilteredRecipes(recipeData);
     })
-  },[recipes]);
+  },[]);
+
+  const resetRecipes = () => setFilteredRecipes(recipes);
+  const categorizeRecipes = (category) => {
+    const categorizedRecipes = recipes.filter(recipe => recipe.category_id === category.id);
+
+    return setFilteredRecipes(categorizedRecipes);
+  }
 
   return (
     <div id="app">
-      <Header/>
+      <Header resetRecipes={resetRecipes}/>
       <Switch>
         <Route exact path="/categories">
-          <CategoriesPage/>
+          <CategoriesPage recipes={recipes} categorizeRecipes={categorizeRecipes} />
         </Route>
         <Route exact path="/recipes">
           <RecipesPage recipes={filteredRecipes} />
