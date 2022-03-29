@@ -7,6 +7,7 @@ function Dashboard({resetRecipes}) {
 
     //Redirects route path based on case provided by tab text content:
     function handleClick(e) {
+        
         resetRecipes();
         
         switch (e.target.textContent) {

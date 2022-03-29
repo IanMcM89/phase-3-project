@@ -7,7 +7,7 @@ function CategoryCard({ category, integer, categorizeRecipes }) {
 
     function handleClick() {
         categorizeRecipes(category);
-        
+
         return history.push("/recipes")
     }
 

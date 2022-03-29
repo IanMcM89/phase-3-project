@@ -9,6 +9,7 @@ import '../css/App.css';
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [categoryName, setCategoryName] = useState(["All Recipes"]);
 
   //Fetch recipe data from backend and set recipes state to fetched recipe data:
   useEffect(() => {
@@ -20,11 +21,11 @@ function App() {
     })
   },[]);
 
-  const resetRecipes = () => setFilteredRecipes(recipes);
+  const resetRecipes = () => setFilteredRecipes(recipes) & setCategoryName("All Recipes");
   const categorizeRecipes = (category) => {
     const categorizedRecipes = recipes.filter(recipe => recipe.category_id === category.id);
 
-    return setFilteredRecipes(categorizedRecipes);
+    return setFilteredRecipes(categorizedRecipes) & setCategoryName(category.name);;
   }
 
   return (
@@ -35,7 +36,7 @@ function App() {
           <CategoriesPage recipes={recipes} categorizeRecipes={categorizeRecipes} />
         </Route>
         <Route exact path="/recipes">
-          <RecipesPage recipes={filteredRecipes} />
+          <RecipesPage recipes={filteredRecipes} categoryName={categoryName}/>
         </Route>
         <Route exact path="/">
           <Home/>
