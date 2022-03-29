@@ -28,7 +28,7 @@ function Dashboard() {
                 {/* Dashboard buttons */}
                 <button onClick={handleClick}>Home</button>
                 <button onClick={handleClick}>Categories</button>
-                <button onClick={handleClick}>Catalogue</button>
+                <button onClick={handleClick}>Recipes</button>
                 <button onClick={handleClick}>Create</button>
             </section>
         </div>
