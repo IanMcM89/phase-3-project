@@ -11,7 +11,7 @@ function Dashboard() {
             case 'Create':
                 history.push("/create")
                 break;
-            case 'Catalogue':
+            case 'Recipes':
                 history.push("/recipes")
                 break;
             case 'Categories':
