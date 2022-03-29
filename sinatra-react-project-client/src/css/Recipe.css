@@ -52,7 +52,7 @@
   grid-row-end: span 2;
   grid-column-end: span 2;
   transform: translatex(1000px);
-  animation: slideIn .6s ease-in-out forwards .6s;
+  animation: slideIn .3s ease-in-out forwards .3s;
   overflow: hidden;
 }
 
