@@ -5,7 +5,7 @@ function Category({ category, integer }) {
     return (
         <div className={`category-${integer}`}>
             <div className={`category-card-${integer}`}>
-                <p>{category.name}</p>
+                <p className="category-card-p">{category.name}</p>
             </div>
         </div>
     );

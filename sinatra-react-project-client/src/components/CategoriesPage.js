@@ -4,7 +4,6 @@ import '../css/Category.css';
 
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
-  const [integer, setInteger] = useState(1);
 
   useEffect(() => {
     fetch("http://localhost:9292/categories")
@@ -14,26 +13,19 @@ function CategoriesPage() {
     })
   },[]);
 
-  let i = integer;
-
-  function increment() {
-    i = i++;
-    return i++;
-  }
-
   //Returns Recipe component for each recipe in fetched recipe data:
   const categoriesToBeDisplayed = categories.map(category => {
-
-    return <Category key={category.id} category={category} integer={increment()}/>
+    return <Category key={category.id} category={category} integer={category.id} />
   });
 
   return (
     <main className="app-main">
       <div className="main-container">
         <div className="main-header">
+          <img src="./images/icons/logo.png" alt="Leaf Icon"/>
           <h2>Categories</h2>
         </div>
-        <div className="main-table">
+        <div id="category-grid">
           {categoriesToBeDisplayed}
         </div>
       </div>

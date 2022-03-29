@@ -8,7 +8,7 @@ import '../css/App.css';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([])
+  const [filteredRecipes, setFilteredRecipes] = useState([]);
 
   //Fetch recipe data from backend and set recipes state to fetched recipe data:
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
       setRecipes(recipeData);
       setFilteredRecipes(recipeData);
     })
-  },[]);
+  },[recipes]);
 
   return (
     <div id="app">
@@ -28,7 +28,7 @@ function App() {
           <CategoriesPage/>
         </Route>
         <Route exact path="/recipes">
-          <RecipesPage recipes={filteredRecipes}/>
+          <RecipesPage recipes={filteredRecipes} />
         </Route>
         <Route exact path="/">
           <Home/>
