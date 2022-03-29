@@ -2,10 +2,10 @@ import React from "react";
 import Dashboard from "./Dashboard";
 import "../css/Header.css";
 
-function Header() {
+function Header({ resetRecipes }) {
     return (
       <div id="app-header">
-        <Dashboard/>
+        <Dashboard resetRecipes={resetRecipes}/>
       </div>
     );
   }

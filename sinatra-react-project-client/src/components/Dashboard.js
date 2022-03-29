@@ -2,17 +2,19 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import "../css/Header.css";
 
-function Dashboard() {
+function Dashboard({resetRecipes}) {
     const history = useHistory();
 
     //Redirects route path based on case provided by tab text content:
     function handleClick(e) {
+        resetRecipes();
+        
         switch (e.target.textContent) {
             case 'Create':
                 history.push("/create")
                 break;
             case 'Recipes':
-                history.push("/recipes")
+                history.push("/recipes");
                 break;
             case 'Categories':
                 history.push("/categories")
