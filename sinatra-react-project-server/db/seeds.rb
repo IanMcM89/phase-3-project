@@ -11,7 +11,7 @@ puts "🌱 Seeding recipes..."
 
 Recipe.create(
     title: "Ground Chicken Tacos", 
-    image_url: "./images/recipes/chicken-tacos.png",
+    image_url: "./images/recipes/chicken-tacos.jpg",
     created_by: "IanMcM89",
     category_id: 1,
     description: "If you're short on time and feel like mexican than these quick and easy chicken tacos are the meal youve been looking for. Who doesn't like tacos?!",
@@ -37,13 +37,13 @@ Recipe.create(
 )
 
 Recipe.create(
-    title: "Hearty Pork Sausage Stew", 
-    image_url: "./images/recipes/sausage-stew.png",
+    title: "Hearty Pork Loin Stew", 
+    image_url: "./images/recipes/pork-stew.jpg",
     created_by: "IanMcM89",
     category_id: 2,
     description: "This easy slow cooked pork tenderloin is a set-it-and-forget-it meal that's worth the wait!",
     ingredients: [
-        "1 Pack Pork Sausage Links (Sliced)", 
+        "1 Pork Tenderloin", 
         "4 Cups Chicken Broth", 
         "2 Diced Russet Potatoes",
         "1 Cup Chopped Carrots",
@@ -66,7 +66,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Spaghetti and Meat Sauce", 
-    image_url: "./images/recipes/spaghetti.png",
+    image_url: "./images/recipes/spaghetti.jpg",
     created_by: "IanMcM89",
     category_id: 3,
     description: "Delicious spaghetti noodles in a zesty tomato and beef sauce. Bon Appetit!",
@@ -90,7 +90,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Shrimp Pasta in Spicy Garlic Sauce", 
-    image_url: "./images/recipes/shrimp-pasta.png",
+    image_url: "./images/recipes/shrimp-pasta.jpg",
     created_by: "IanMcM89",
     category_id: 4,
     description: "This quick and delicious shrimp pasta dish is super easy to make and great for when you're short on time.",
@@ -121,7 +121,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Vegan Red Beans and Rice", 
-    image_url: "./images/recipes/red-beans.png",
+    image_url: "./images/recipes/red-beans.jpg",
     created_by: "IanMcM89",
     category_id: 5,
     description: "You've got to try my meatless take on this southern, Cajun favorite!",
@@ -152,7 +152,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Tropical Fruit Parfait", 
-    image_url: "./images/recipes/fruit-parfairt.png",
+    image_url: "./images/recipes/fruit-parfairt.jpg",
     created_by: "IanMcM89",
     category_id: 6,
     description: "This delicious tropical fruit parfeit will remind you of white sand and seabreezes and is a perfect way to end a meal.",
@@ -171,25 +171,57 @@ Recipe.create(
     ],
 )
 
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
-Recipe.create(title: "test")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg")
+Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg")
+
+
 
 puts "✅ Done seeding!"
