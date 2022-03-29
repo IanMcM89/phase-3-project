@@ -89,8 +89,8 @@
     width: 100%;
     height: 15%;
     margin: 0;
-    transform: translateY(300px);
-    animation: slideUp 1s ease-in-out forwards 1s;
+    transform: translatex(-300px);
+    animation: slideIn .8s ease-in-out forwards .8s;
 }
 
 .overlay-right {
