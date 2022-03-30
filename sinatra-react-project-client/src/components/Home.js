@@ -12,9 +12,9 @@ function Home() {
               <h1>Recipes.</h1>
             </div>
             <div className="par">
-              <h2>No Nonsense. All Recipes.</h2>
+              <h2>Lorem ipsum dolor sit amet.</h2>
               <p>
-                Tired of history lessons and endless scrolling every time you search for a recipe online? NNR provides only recipes and ingredients, without all the...extra...information. Simply choose a category to get started or browse through the recipes catalogue.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
               </p>
             </div>
             <div className="btns">
