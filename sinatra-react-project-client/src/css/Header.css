@@ -9,46 +9,29 @@
     z-index: 10;
 }
 
-#dashboard {
+#header-buttons {
     color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 50%;
-    height: 100%;
-}
-
-#dashboard section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    width: 80%;
-    height: 100%;
-    margin: 0;
 }
   
-#dashboard button {
+#header-buttons button {
     display: flex;
-    background: black;
     border: none;
     text-decoration: none;
     background-color: transparent;
-    border-bottom: rgba(0, 0, 0, 0) solid 3px;
     cursor: pointer;
-    transition: 0.3s;
     color: white;
     justify-content: center;
     align-items: center;
-    align-content: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
-    width: 20%;
-    padding-top: 10px;
-    padding-bottom: 7px;
     margin: auto 4% auto 4%;
+    padding: 10px;
+    transition: 0.3s;
 }
   
-#dashboard button:hover {
+#header-buttons button:hover {
     background-color: forestgreen;
 }
