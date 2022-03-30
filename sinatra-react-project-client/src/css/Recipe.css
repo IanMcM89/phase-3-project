@@ -56,13 +56,6 @@
   overflow: hidden;
 }
 
-#recipe-grid div:nth-child(5n) {
-  grid-row-end: span 2;
-  transform: translatex(-1000px);
-  animation: slideRight .4s ease-in-out forwards .4s;
-  overflow: hidden;
-}
-
 #recipe-grid div:nth-child(6n) {
   grid-column-end: span 2;
   transform: translatey(1000px);
