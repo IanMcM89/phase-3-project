@@ -22,6 +22,12 @@ function App() {
   },[]);
 
   const resetRecipes = () => setFilteredRecipes(recipes) & setCategoryName("All Recipes");
+  
+  const searchRecipes = (value) => {
+    setFilteredRecipes(recipes.filter(recipe => recipe.title.toLowerCase().startsWith(value)));
+    setCategoryName(`'${value}'`);
+  };
+
   const categorizeRecipes = (category) => {
     const categorizedRecipes = recipes.filter(recipe => recipe.category_id === category.id);
 
@@ -30,7 +36,7 @@ function App() {
 
   return (
     <div id="app">
-      <Header resetRecipes={resetRecipes}/>
+      <Header resetRecipes={resetRecipes} searchRecipes={searchRecipes}/>
       <Switch>
         <Route exact path="/categories">
           <CategoriesPage recipes={recipes} categorizeRecipes={categorizeRecipes} />

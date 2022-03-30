@@ -1,8 +1,9 @@
 import React from "react";
+import Search from "./Search"
 import { useHistory } from 'react-router-dom';
 import "../css/Header.css";
 
-function Header({ resetRecipes }) {
+function Header({ resetRecipes, searchRecipes}) {
   const history = useHistory();
 
   //Redirects route path based on case provided by tab text content:
@@ -27,6 +28,7 @@ function Header({ resetRecipes }) {
 
   return (
     <div id="app-header">
+      <Search resetRecipes={resetRecipes} searchRecipes={searchRecipes}/>
       <div id="header-buttons">
         {/* Dashboard buttons */}
         <button onClick={handleClick}>Home</button>
