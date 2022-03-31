@@ -35,17 +35,3 @@
 #header-buttons button:hover {
     background-color: forestgreen;
 }
-
-#search {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    margin: auto;
-    padding-left: 5%;
-}
-
-#search input {
-    border: none;
-    text-decoration: none;
-}

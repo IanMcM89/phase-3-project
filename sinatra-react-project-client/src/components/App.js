@@ -8,43 +8,63 @@ import '../css/App.css';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
-  const [categoryName, setCategoryName] = useState(["All Recipes"]);
+  const [headerText, setHeaderText] = useState();
+  const [searchValue, setSearchValue] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [getRecipes, setGetRecipes] = useState(false)
 
-  //Fetch recipe data from backend and set recipes state to fetched recipe data:
+  //Fetch recipes:
   useEffect(() => {
     fetch("http://localhost:9292/recipes")
     .then(r => r.json())
     .then(recipeData => {
       setRecipes(recipeData);
-      setFilteredRecipes(recipeData);
+      console.log('Recipes fetched')
     })
-  },[]);
+    .then(setHeaderText("All Recipes"));
+  },[getRecipes]);
 
-  const resetRecipes = () => setFilteredRecipes(recipes) & setCategoryName("All Recipes");
-  
-  const searchRecipes = (value) => {
-    setFilteredRecipes(recipes.filter(recipe => recipe.title.toLowerCase().startsWith(value)));
-    setCategoryName(`'${value}'`);
+  const resetRecipes = () => setGetRecipes(!getRecipes);
+
+  const searchRecipes = input => {
+    const filteredRecipes = recipes.filter(
+      recipe => recipe.title.split(' ').find(
+        word => word.toLowerCase() === input.toLowerCase()
+    ));
+    setSearchValue(input);
+    setSearchResults(filteredRecipes);
+    setHeaderText(input !== '' ? `${filteredRecipes.length} results for '${input}'` : "All Recipes");
   };
 
-  const categorizeRecipes = (category) => {
-    const categorizedRecipes = recipes.filter(recipe => recipe.category_id === category.id);
-
-    return setFilteredRecipes(categorizedRecipes) & setCategoryName(category.name);;
+  const categorizeRecipes = category => {
+    const categorizedRecipes = recipes.filter(
+      recipe => recipe.category_id === category.id
+    );
+    setRecipes(categorizedRecipes);
+    setHeaderText(`${categorizedRecipes.length} results for '${category.name}'`);
   }
 
   return (
     <div id="app">
-      <Header resetRecipes={resetRecipes} searchRecipes={searchRecipes}/>
+      <Header
+        resetRecipes={resetRecipes}
+      />
       <Switch>
         <Route exact path="/categories">
-          <CategoriesPage recipes={recipes} categorizeRecipes={categorizeRecipes} />
+          <CategoriesPage 
+          categorizeRecipes={categorizeRecipes}
+        />
         </Route>
         <Route exact path="/recipes">
-          <RecipesPage recipes={filteredRecipes} categoryName={categoryName}/>
+          <RecipesPage 
+            recipes={recipes} 
+            headerText={headerText}
+            searchValue={searchValue}
+            searchResults={searchResults}
+            searchRecipes={searchRecipes}
+          />
         </Route>
-        <Route exact path="/">
+        <Route exact path="/home">
           <Home/>
         </Route>
       </Switch>

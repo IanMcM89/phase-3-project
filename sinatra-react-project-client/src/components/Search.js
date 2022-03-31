@@ -1,23 +1,23 @@
-import React, {useState} from "react";
-import "../css/Header.css";
+import React from "react";
+import "../css/Recipe.css";
 
-function Search({ resetRecipes, searchRecipes }) {
-    const [search, setSearch] = useState('');
-
-    //Controls search input field and changes filtered plants state based on search input provided:
-    function onChange(e) {
-        setSearch(e.target.value);
-
-        if (e.target.value === '') {
-            return resetRecipes();
-        } else {
-            return searchRecipes(e.target.value);
-        }
-    }
+function Search(props) {
+    //Controls search input field and changes filtered recipes state based on search input provided:
+    const handleSearch = e => {
+        return props.searchRecipes(e.target.value);
+    };
 
     return (
-        <div id="search">
-            <input type="text" name="search" placeholder="Search Recipes" value={search} onChange={onChange} />
+        <div id="main-header-search">
+            <img className="search-icon" src="./images/icons/search.png" alt="Search Icon"/>
+            <input 
+                className="search-input" 
+                type="text" 
+                name="search" 
+                placeholder="Search Recipes" 
+                value={props.searchValue} 
+                onChange={handleSearch} 
+            />
         </div>
     );
 }

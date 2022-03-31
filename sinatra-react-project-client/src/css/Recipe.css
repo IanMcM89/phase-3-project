@@ -15,24 +15,61 @@
 
 .main-header {
     display: flex;
-    width: 90%;
+    width: 80%;
     height: 10%;
-    margin: 1% auto 0 8%;
+    margin: 1% auto 0 auto;
     overflow: hidden;
-    transform: translatex(-1000px);
-    animation: slideRight .6s ease-in-out forwards .6s;
 }
 
-.main-header h2 {
-    color: forestgreen;
-    display: flex;
-    font-family: inherit;
-    font-size: 30px;
-    font-weight: bolder;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    height: 100%;
+#main-header-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: auto 0;
+  transform: translatex(-1000px);
+  animation: slideRight .4s ease-in-out forwards .4s;
+}
+
+#main-header-content h2 {
+  color: forestgreen;
+  display: flex;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: bolder;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+
+#main-header-content img {
+  width: auto;
+  height: 100%;
+}
+
+#main-header-search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  transform: translatey(-1000px);
+  animation: slideDown .6s ease-in-out forwards .6s;
+}
+
+.search-icon {
+  background-color: #40a042;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+
+.search-input {
+  border: green solid 2px;
+  height: 100%;
+  width: 40%;
 }
 
 #recipe-grid {

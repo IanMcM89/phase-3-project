@@ -1,34 +1,18 @@
 import React from "react";
-import Search from "./Search"
 import { useHistory } from 'react-router-dom';
 import "../css/Header.css";
 
-function Header({ resetRecipes, searchRecipes}) {
+function Header(props) {
   const history = useHistory();
 
-  //Redirects route path based on case provided by tab text content:
+  //On button click, redirect path, toggle search bar and reset recipes:
   function handleClick(e) {
-      
-    resetRecipes();
-    
-    switch (e.target.textContent) {
-        case 'Create':
-            history.push("/create")
-            break;
-        case 'Recipes':
-            history.push("/recipes");
-            break;
-        case 'Categories':
-            history.push("/categories")
-            break;
-        default:
-            return history.push("/");
-    }       
+    history.push(`/${(e.target.textContent).toLowerCase()}`);
+    props.resetRecipes();
   }
 
   return (
     <div id="app-header">
-      <Search resetRecipes={resetRecipes} searchRecipes={searchRecipes}/>
       <div id="header-buttons">
         {/* Dashboard buttons */}
         <button onClick={handleClick}>Home</button>
