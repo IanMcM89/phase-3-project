@@ -2,19 +2,18 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import '../css/Category.css';
 
-function CategoryCard({ category, integer, categorizeRecipes }) {
+function CategoryCard(props) {
     const history = useHistory();
 
     function handleClick() {
-        categorizeRecipes(category);
-
-        return history.push("/recipes")
+        return history.push("/recipes") &
+        props.categorizeRecipes(props.category);
     }
 
     return (
-        <div className={`category-${integer}`} onClick={handleClick}>
-            <div className={`category-card-${integer}`}>
-                <p className="category-card-p">{category.name}</p>
+        <div className={`category-${props.integer}`} onClick={handleClick}>
+            <div className={`category-card-${props.integer}`}>
+                <p className="category-card-p">{props.category.name}</p>
             </div>
         </div>
     );
