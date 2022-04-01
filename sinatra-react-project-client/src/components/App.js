@@ -24,13 +24,15 @@ function App() {
     .then(setHeaderText("All Recipes"));
   },[getRecipes]);
 
-  const resetRecipes = () => setGetRecipes(!getRecipes);
+  const resetRecipes = () => {
+    setGetRecipes(!getRecipes);
+    setSearchValue('');
+  }
 
   const searchRecipes = input => {
     const filteredRecipes = recipes.filter(
-      recipe => recipe.title.split(' ').find(
-        word => word.toLowerCase() === input.toLowerCase()
-    ));
+      recipe => recipe.title.toLowerCase().includes(input.toLowerCase())
+    );
     setSearchValue(input);
     setSearchResults(filteredRecipes);
     setHeaderText(input !== '' ? `${filteredRecipes.length} results for '${input}'` : "All Recipes");
@@ -41,19 +43,18 @@ function App() {
       recipe => recipe.category_id === category.id
     );
     setRecipes(categorizedRecipes);
-    setHeaderText(`${categorizedRecipes.length} results for '${category.name}'`);
+    setHeaderText(`${categorizedRecipes.length} results for '${category.name}' category`);
   }
 
   return (
     <div id="app">
       <Header
         resetRecipes={resetRecipes}
+        setSearchValue={setSearchValue}
       />
       <Switch>
-        <Route exact path="/categories">
-          <CategoriesPage 
-          categorizeRecipes={categorizeRecipes}
-        />
+        <Route exact path="/recipes/:id">
+        <Route/>
         </Route>
         <Route exact path="/recipes">
           <RecipesPage 
@@ -64,7 +65,12 @@ function App() {
             searchRecipes={searchRecipes}
           />
         </Route>
-        <Route exact path="/home">
+        <Route exact path="/categories">
+          <CategoriesPage 
+            categorizeRecipes={categorizeRecipes}
+        />
+        </Route>
+        <Route path="/home">
           <Home/>
         </Route>
       </Switch>
