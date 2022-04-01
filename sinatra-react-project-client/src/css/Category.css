@@ -90,7 +90,7 @@
     height: 15%;
     margin: 0;
     transform: translatex(-300px);
-    animation: slideIn .8s ease-in-out forwards .8s;
+    animation: slideIn .5s ease-in-out forwards .5s;
 }
 
 .overlay-right {
