@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from 'react-router-dom';
-import '../css/Recipe.css';
+import '../css/RecipesPage.css';
 
 function RecipeCard({ recipe }) {
   const history = useHistory();
