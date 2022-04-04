@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CategoryCard from './CategoryCard';
 import '../css/Category.css';
 
-function CategoriesPage({ categorizeRecipes }) {
+function CategoriesPage() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,7 @@ function CategoriesPage({ categorizeRecipes }) {
   },[]); 
 
   //Returns Recipe component for each recipe in fetched recipe data:
-  const categoriesToBeDisplayed = categories.map(category => {
-    return <CategoryCard key={category.id} category={category} categorizeRecipes={categorizeRecipes} integer={category.id}/>
-  });
+  const categoriesToBeDisplayed = categories.map(category => <CategoryCard key={category.id} category={category}/>);
 
   return (
     <main className="app-main">

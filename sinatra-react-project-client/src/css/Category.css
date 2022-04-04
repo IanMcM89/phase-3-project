@@ -9,7 +9,7 @@
     overflow-y: auto;
 }
 
-.category-1, .category-2, .category-3, .category-4, .category-5, .category-6 {
+#category-grid .category-card {
     display: flex;
     align-items: center;
     width: 15%;
@@ -20,27 +20,27 @@
     animation: appear 1.0s ease forwards;
 }
 
-.category-2 {
+#category-grid .category-card:nth-child(2n) {
     animation: appear 1.5s ease forwards;
 }
 
-.category-3 {
+#category-grid .category-card:nth-child(3n) {
     animation: appear 2s ease forwards;
 }
 
-.category-4 {
+#category-grid .category-card:nth-child(4n) {
     animation: appear 2.5s ease forwards;
 }
 
-.category-5 {
+#category-grid .category-card:nth-child(5n) {
     animation: appear 3s ease forwards;
 }
 
-.category-6 {
+#category-grid .category-card:nth-child(6n) {
     animation: appear 3.5s ease forwards;
 }
 
-.category-card-1, .category-card-2, .category-card-3, .category-card-4, .category-card-5, .category-card-6 {
+.category-card-content {
     background-image: url("/public/images/categories/poultry.jpg");
     background-size: cover;
     background-position: center;
@@ -56,26 +56,26 @@
     animation: hoverOut 0.4s ease forwards;
 }
 
-.category-card-1:hover, .category-card-2:hover, .category-card-3:hover, .category-card-4:hover, .category-card-5:hover, .category-card-6:hover{
+.category-card-content:hover {
     animation: hoverIn 0.4s ease forwards;
 }
 
-.category-card-2 {
+#category-grid .category-card:nth-child(2n) .category-card-content {
     background-image: url("/public/images/categories/pork.jpg");
 }
 
-.category-card-3 {
+#category-grid .category-card:nth-child(3n) .category-card-content {
     background-image: url("/public/images/categories/beef.jpg");
 }
-.category-card-4 {
+#category-grid .category-card:nth-child(4n) .category-card-content {
     background-image: url("/public/images/categories/seafood.jpg");
 }
 
-.category-card-5 {
+#category-grid .category-card:nth-child(5n) .category-card-content {
     background-image: url("/public/images/categories/vegan.jpg");
 }
 
-.category-card-6 {
+#category-grid .category-card:nth-child(6n) .category-card-content {
     background-image: url("/public/images/categories/dessert.jpg");
 }
 
@@ -90,7 +90,7 @@
     height: 15%;
     margin: 0;
     transform: translatex(-300px);
-    animation: slideIn .5s ease-in-out forwards .5s;
+    animation: slideIn .8s ease-in-out forwards .8s;
 }
 
 .overlay-right {
