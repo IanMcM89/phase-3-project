@@ -1,175 +1,342 @@
-.main-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #fff;
-  flex-direction: column;
-  font-family: 'Times New Roman', Times, serif;
-  width: 100%;
-  height: 100%;
-  background-color: var(--secondary-color);
-  position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  transition: all .8s ease;
-}
+/* --- recipe main --- */
 
-.main-header {
-    display: flex;
-    width: 80%;
-    height: 10%;
-    margin: 1% auto 0 auto;
-    overflow: hidden;
-}
-
-#main-header-content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 50%;
-  height: 100%;
-  margin: auto 0;
-  transform: translatex(-1000px);
-  animation: slideRight .4s ease-in-out forwards .4s;
-}
-
-#main-header-content h2 {
-  color: forestgreen;
-  display: flex;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: bolder;
-  justify-content: flex-start;
-  align-items: center;
-  width: auto;
-  height: 100%;
-}
-
-#main-header-content img {
-  width: auto;
-  height: 80%;
-}
-
-#main-header-search {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 50%;
+.recipe {
+  background: linear-gradient( 
+    165deg, 
+    rgb(108, 170, 106) 10%, 
+    rgb(28, 89, 40) 50%
+  );
+  border-radius: 0 35px 35px 35px;
+  display: inherit;
+  width: 80%;
+  height: 85%;
   margin: auto;
-  transform: translatey(-1000px);
-  animation: slideDown .6s ease-in-out forwards .6s;
-}
-
-.search-icon {
-  background-color: #40a042;
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-}
-
-.search-input {
-  border: green solid 2px;
-  height: 100%;
-  width: 40%;
-}
-
-#recipe-grid {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
-  grid-auto-rows: minmax(250px, 250px);
-  grid-auto-flow: dense;
-  gap: 10px;
-  width: 90%;
-  height: 80%;
-  margin: 0 auto auto auto;
-  overflow-y: auto;
-  animation: appear 1s ease forwards;
-}
-
-#recipe-grid div:nth-child(4n) {
-  grid-row-end: span 2;
-  grid-column-end: span 2;
-  transform: translatex(1000px);
-  animation: slideIn .3s ease-in-out forwards .3s;
+  animation: appear .6s ease-in forwards;
   overflow: hidden;
 }
 
-#recipe-grid div:nth-child(6n) {
-  grid-column-end: span 2;
-  transform: translatey(1000px);
-  animation: slideUp .2s ease-in-out forwards .2s;
-  overflow: hidden;
-}
+/* --- btns --- */
 
-.recipe-card {
-  animation: appear .8s ease forwards;
-  overflow: hidden;
-}
-
-.recipe-card-content {
-  background-color: rgba(128, 128, 128, 0.459);
-  background-size: cover;
-  background-position: center;
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.wrap--ul button {
+  position: absolute;
   display: flex;
-  align-items: flex-end;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  align-content: center;
-  overflow: hidden;
-  animation: hoverOut 0.4s ease forwards;
-}
-
-.recipe-card-content:hover {
-  animation: hoverIn 0.4s ease forwards;
-}
-
-.recipe-card-p {
-  display: flex;
+  flex-direction: column;
+  background-color: rgba(100, 100, 100, 0.5);
+  backdrop-filter: blur(20px);
   justify-content: center;
   align-items: center;
+  font-size: 1.3rem;
   color: white;
-  background-color: rgba(105, 105, 105, 0.486);
-  backdrop-filter: blur(20px);
+  border: none;
   width: 100%;
-  height: 25%;
+  height: 15%;
+  z-index: 1;
+}
+
+.wrap--ul button:hover {
+  background-color: rgba(117, 235, 63, 0.5);
+}
+
+/* --- headers --- */
+
+.wrap--content-left h1, 
+.wrap--content-left h2, 
+.wrap--content-left h3,
+.wrap--content-left p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  font-family: arial;
+  width: 100%;
+  padding: 0 5% 0 5%;
   margin: 0;
-  transform: translateY(300px);
-  animation: slideUp .5s ease-in-out forwards .5s;
 }
 
-.overlay-up {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.wrap--content-left h1 {
+  background-color: lightgrey;
+  color: gray;
+  border-bottom: solid 4px yellowgreen;
+  font-size: 1.8rem;
+  height: 15%;
+  transform: translatey(-1000px);
+  animation: slideDown .4s ease-in-out forwards .4s;
+}
+
+.wrap--content-left h2 {
+  color: rgb(173, 231, 58);
+  height: 10%;
+  transform: translatex(-1000px);
+  animation: slideRight .6s ease-in-out forwards .6s;
+}
+
+.wrap--content-left h3 {
+  height: 10%;
+  margin-top: 2%;
+}
+
+.wrap--content-left p {
+  font-family: 'Times New Roman', Times, serif;
+  justify-content: center;
+  font-size: 1.1rem;
   height: auto;
-  z-index: 9;
-  background-color: var(--contrast-color);
-  animation: swoopUp .15s ease-in-out forwards .15s;
+  margin: auto;
+  transform: translatex(-1000px);
+  animation: slideRight .8s ease-in-out forwards .8s;
 }
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #40a042 #b0b0b0;
+/* --- wrappers --- */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+  .wrap--content-left {
+    width: 60%;
   }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 12px;
+  .wrap--content-right {
+    width: 40%;
+    margin: auto 0 auto;
   }
 
-  *::-webkit-scrollbar-track {
-    background: #b0b0b03f;
+  .wrap--div {
+    display: block;
+    height: fit-content;
+    margin: 0;
   }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #40a042ad;
-    border-radius: 10px;
-    border: 1px none #86ea96;
+  .wrap--div-arrow {
+    margin: 0;
   }
+
+  .wrap--ol {
+    position: relative;
+    height: 60%;
+    margin-top: 4%;
+    transform: translatey(1000px);
+    animation: slideUp .2s ease-in-out forwards .2s;
+  }
+
+  .wrap--ul {
+    background: rgba(112, 128, 144, 0.479);
+    border-radius: 0 35px 35px 0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transform: translatex(1000px);
+    animation: slideIn .3s ease-in-out forwards .3s;
+  }
+
+  /* --- dividers --- */
+
+.divider {
+  position: relative;
+  height: 1px;
+}
+
+  .divider div {
+    margin: 2%;
+  }
+
+  .div--transparent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 1px;
+    background-image: linear-gradient( 
+      to right, 
+      transparent, 
+      lightgrey, 
+      transparent
+    );
+  }
+
+  .div--dot:after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: calc(50% - 9px);
+    width: 10px;
+    height: 10px;
+    background-color: goldenrod;
+    border: 1px solid rgb(48, 49, 51);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px white, 0 0 2px 2px white;
+    z-index: 1;
+  }
+
+/* --- overlays --- */
+
+.recipe__overlay {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.overlay--directions {
+  background: linear-gradient(
+    0deg, 
+    rgba(28, 89, 40, 1) 2%, 
+    transparent 10%
+  );
+  border-radius: 0 0 0 35px;
+  pointer-events: none;
+}
+
+.overlay--ingredients {
+  background: linear-gradient(
+    0deg, 
+    white 2%, 
+    transparent 10%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* --- ul & ol --- */
+
+.wrap--content-left ol, .wrap--content-right ul {
+  display: flex;
+  flex-direction: column;
+  counter-reset: index;
+  margin: auto;
+  overflow-y: auto;
+}
+
+.wrap--content-left ol {
+  color: white;
+  width: 85%;
+  height: 80%;
+  padding-right: 5%;
+}
+
+.wrap--content-right ul {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 5% 10% 5% 10%;
+}
+
+.ingredients--show, .ingredients--hide {
+  position: absolute;
+  border-radius: 0 0 35px 0;
+  border: solid gray 1px;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  transition: .35s all;
+	transform: translate(0px, 0px);
+}
+
+.ingredients--hide {
+	transform: translate(0px, -1000px);
+}
+
+/* --- li --- */
+
+.wrap--ol > ol li {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  counter-increment: index;
+  box-sizing: border-box;
+  padding: 12px 0;
+}
+
+.wrap--ol > ol li::before {
+  content: "Step " counter(index);
+  color: rgb(173, 231, 58);
+  text-align: right;
+  min-width: 60px;
+  font-size: 1rem;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+}
+
+.wrap--ol > ol li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.wrap--content-right ul li {
+  align-items: center;
+  counter-increment: none;
+  font-size: 16px;
+  padding: 12px 0;
+}
+
+/* --- checkbox --- */
+
+.label {
+  font-family: arial;
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  color: black;
+}
+
+.label input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: lightgrey;
+  border: 0px solid black;
+  border-radius: 0px;
+}
+
+.checkbox__indicator:after {
+  box-sizing: unset;
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.label input:hover ~ .checkbox__indicator,
+.label input:focus ~ .checkbox__indicator {
+  background: lightgreen;
+}
+
+.label input:checked ~ .checkbox__indicator {
+  background: goldenrod;
+}
+
+.label input:checked ~ .checkbox__indicator:after {
+  display: block;
+}
+
+.label--checkbox .checkbox__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
