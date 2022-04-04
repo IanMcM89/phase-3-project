@@ -2,25 +2,23 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import "../css/Header.css";
 
-function Header({ resetRecipes }) {
+function Header() {
   const history = useHistory();
 
-  //On button click, redirect path, toggle search bar and reset recipes:
+  //On button click, redirect path and reset recipes:
   function handleClick(e) {
-    history.push(`/${(e.target.textContent).toLowerCase()}`);
-    resetRecipes();
+    history.push(e.target.textContent.includes("Home") ? "/" : `/${(e.target.textContent).toLowerCase()}`);
   }
 
   return (
-    <div id="app-header">
-      <div id="header-buttons">
-        {/* Dashboard buttons */}
+    <header>
+      <div id="header__buttons">
         <button onClick={handleClick}>Home</button>
         <button onClick={handleClick}>Categories</button>
         <button onClick={handleClick}>Recipes</button>
         <button onClick={handleClick}>Create</button>
       </div>
-    </div>
+    </header>
   );
 }
 
