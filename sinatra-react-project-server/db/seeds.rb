@@ -1,18 +1,17 @@
 puts "🌱 Seeding categories..."
 
-Category.create(name: "Poultry")
+Category.create(name: "Poultry & Fowl")
 Category.create(name: "Pork")
-Category.create(name: "Beef")
+Category.create(name: "Beef, Lamb & Game")
 Category.create(name: "Seafood")
-Category.create(name: "Vegan")
-Category.create(name: "Dessert")
+Category.create(name: "Vegan Friendly")
+Category.create(name: "Desserts and Sweets")
 
 puts "🌱 Seeding recipes..."
 
 Recipe.create(
     title: "Ground Chicken Tacos", 
-    image_url: "./images/recipes/chicken-tacos.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
     category_id: 1,
     description: "If you're short on time and feel like mexican than these quick and easy chicken tacos are the meal youve been looking for. Who doesn't like tacos?!",
     ingredients: [
@@ -38,8 +37,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Hearty Pork Loin Stew", 
-    image_url: "./images/recipes/pork-stew.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
     category_id: 2,
     description: "This easy slow cooked pork tenderloin is a set-it-and-forget-it meal that's worth the wait!",
     ingredients: [
@@ -66,8 +64,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Spaghetti and Meat Sauce", 
-    image_url: "./images/recipes/spaghetti.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
     category_id: 3,
     description: "Delicious spaghetti noodles in a zesty tomato and beef sauce. Bon Appetit!",
     ingredients: [
@@ -90,8 +87,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Shrimp Pasta in Spicy Garlic Sauce", 
-    image_url: "./images/recipes/shrimp-pasta.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
     category_id: 4,
     description: "This quick and delicious shrimp pasta dish is super easy to make and great for when you're short on time.",
     ingredients: [
@@ -121,8 +117,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Vegan Red Beans and Rice", 
-    image_url: "./images/recipes/red-beans.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
     category_id: 5,
     description: "You've got to try my meatless take on this southern, Cajun favorite!",
     ingredients: [
@@ -152,8 +147,7 @@ Recipe.create(
 
 Recipe.create(
     title: "Tropical Fruit Parfait", 
-    image_url: "./images/recipes/fruit-parfairt.jpg",
-    created_by: "IanMcM89",
+    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
     category_id: 6,
     description: "This delicious tropical fruit parfeit will remind you of white sand and seabreezes and is a perfect way to end a meal.",
     ingredients: [
@@ -171,37 +165,112 @@ Recipe.create(
     ],
 )
 
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg", category_id: 1)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg", category_id: 2)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg", category_id: 3)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg", category_id: 4)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/red-beans.jpg", category_id: 5)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg", category_id: 6)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg", category_id: 1)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg", category_id: 2)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg", category_id: 3)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg", category_id: 4)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/red-beans.jpg", category_id: 5)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg", category_id: 6)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg", category_id: 1)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg", category_id: 2)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg", category_id: 3)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg", category_id: 4)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/red-beans.jpg", category_id: 5)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg", category_id: 6)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg", category_id: 1)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg", category_id: 2)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg", category_id: 3)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg", category_id: 4)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/red-beans.jpg", category_id: 5)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg", category_id: 6)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/chicken-tacos.jpg", category_id: 1)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/pork-stew.jpg", category_id: 2)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/spaghetti.jpg", category_id: 3)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/shrimp-pasta.jpg", category_id: 4)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/red-beans.jpg", category_id: 5)
-Recipe.create(title: "Recipe Placeholder", image_url: "./images/recipes/fruit-parfairt.jpg", category_id: 6)
+Recipe.create(
+    title: "Ground Chicken Tacos", 
+    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
+    category_id: 1,
+)
 
+Recipe.create(
+    title: "Hearty Pork Loin Stew", 
+    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
+    category_id: 2,
+)
 
+Recipe.create(
+    title: "Spaghetti and Meat Sauce", 
+    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
+    category_id: 3,
+)
+
+Recipe.create(
+    title: "Shrimp Pasta in Spicy Garlic Sauce", 
+    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
+    category_id: 4,
+)
+
+Recipe.create(
+    title: "Vegan Red Beans and Rice", 
+    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
+    category_id: 5,
+)
+
+Recipe.create(
+    title: "Tropical Fruit Parfait", 
+    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
+    category_id: 6,
+)
+
+Recipe.create(
+    title: "Ground Chicken Tacos", 
+    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
+    category_id: 1,
+)
+
+Recipe.create(
+    title: "Hearty Pork Loin Stew", 
+    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
+    category_id: 2,
+)
+
+Recipe.create(
+    title: "Spaghetti and Meat Sauce", 
+    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
+    category_id: 3,
+)
+
+Recipe.create(
+    title: "Shrimp Pasta in Spicy Garlic Sauce", 
+    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
+    category_id: 4,
+)
+
+Recipe.create(
+    title: "Vegan Red Beans and Rice", 
+    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
+    category_id: 5,
+)
+
+Recipe.create(
+    title: "Tropical Fruit Parfait", 
+    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
+    category_id: 6,
+)
+
+Recipe.create(
+    title: "Ground Chicken Tacos", 
+    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
+    category_id: 1,
+)
+
+Recipe.create(
+    title: "Hearty Pork Loin Stew", 
+    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
+    category_id: 2,
+)
+
+Recipe.create(
+    title: "Spaghetti and Meat Sauce", 
+    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
+    category_id: 3,
+)
+
+Recipe.create(
+    title: "Shrimp Pasta in Spicy Garlic Sauce", 
+    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
+    category_id: 4,
+)
+
+Recipe.create(
+    title: "Vegan Red Beans and Rice", 
+    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
+    category_id: 5,
+)
+
+Recipe.create(
+    title: "Tropical Fruit Parfait", 
+    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
+    category_id: 6,
+)
 
 puts "✅ Done seeding!"
