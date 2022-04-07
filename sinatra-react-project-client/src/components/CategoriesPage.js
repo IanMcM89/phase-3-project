@@ -30,7 +30,7 @@ function CategoriesPage() {
           {categoriesToBeDisplayed}
         </div>
       </div>
-      <div className="overlay-right"/>
+      <div className="overlay overlay--right"/>
     </main>
   );
 }
