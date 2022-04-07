@@ -3,10 +3,10 @@ import '../css/Home.css';
 
 function Home() {
   return (
-    <main className="app-main">
-      <div className='container'>
-        <div className="container_content">
-          <div className="container_content_inner">
+    <main>
+      <div className="home">
+        <div className="wrap--home-content">
+          <div className="wrap--home-content-inner">
             <div className="title">
               <img src="./images/icons/logo.png" alt="Leaf Icon"/>
               <h1>Recipes.</h1>
@@ -24,7 +24,7 @@ function Home() {
         </div>
         <div className="container_img"/>
       </div>
-      <div className="overlay-left"></div>
+      <div className="overlay overlay--left"></div>
     </main>
   );
 }
