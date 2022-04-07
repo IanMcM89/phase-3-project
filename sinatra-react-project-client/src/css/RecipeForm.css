@@ -1,0 +1,204 @@
+/* --- form main --- */
+
+#recipe-form {
+  border-radius: 35px 0 35px 35px;
+}
+
+#recipe-form > .wrap--content-right > .wrap--ul {
+  border-radius: 0 0 35px;
+}
+
+/* --- leaf logo --- */
+
+.wrap--content-left img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 80%;
+  margin: auto 0;
+}
+
+/* --- Inputs --- */
+
+#recipe-form__title-input,
+#recipe-form__title-input > input,
+#recipe-form__category-input,
+#recipe-form__category-input > select,
+#recipe-form__description-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: arial;
+  background-color: lightgrey;
+  color: gray;
+  border-bottom: solid 4px yellowgreen;
+  font-size: 1.8rem;
+  width: 100%;
+  height: 15%;
+  padding: 0 5% 0 5%;
+  margin: 0;
+  transform: translatey(-1000px);
+  animation: slideDown .4s ease-in-out forwards .2s;
+}
+
+#recipe-form__title-input > input,
+#recipe-form__category-input,
+#recipe-form__description-input {
+  background-color: transparent;
+  border: none;
+  height: 10%;
+  transform: translatex(-1000px);
+  animation: slideRight .4s ease-in-out forwards .3s;
+}
+
+/* Title */
+
+#recipe-form__title-input > input {
+  font-weight: bold;
+  width: 90%;
+  height: 75%;
+  padding: 0;
+  transform: none;
+  animation: none;
+}
+
+/* Category */
+
+#recipe-form__category-input > select {
+  background-color: transparent;
+  border: none;
+  color: rgb(173, 231, 58);
+  font-size: 0.8em;
+  font-weight: bold;
+  width: fit-content;
+  height: 75%;
+  padding: 0;
+  transform: none;
+  animation: none;
+}
+
+#recipe-form__category-input > select > option {
+  color: black;
+  font-size: 0.5em;
+}
+
+/* Description */
+
+#recipe-form__description-input {
+  padding: 0 5% 0 5%;
+  margin: 0;
+  animation: slideRight .3s ease-in-out forwards .3s;
+}
+
+#recipe-form__description-input > textarea {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  border: none;
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  overflow-y: hidden;
+}
+
+/* Directions & Ingredients */
+
+#recipe-form__direction-inputs > li {
+  width: 100%;
+}
+
+#recipe-form__ingredient-inputs > li {
+  display: flex;
+  flex-direction: row;
+  padding: 6px 0;
+}
+
+#recipe-form__direction-inputs > li > textarea,
+#recipe-form__ingredient-inputs > li > textarea {
+  display: flex;
+  color: gray;
+  font-family: arial;
+  font-size: 1.1rem;
+  border: none;
+  width: 90%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#recipe-form__ingredient-inputs > li > textarea {
+  background-color: lightgray;
+  width: 90%;
+  height: 75%;
+}
+
+/* --- Add li Buttons --- */
+
+#recipe-form__direction-inputs > button,
+#recipe-form__ingredient-inputs > button,
+#recipe-form__direction-inputs > li > button {
+  position: unset;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: bolder;
+  color: white;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 50%;
+  margin-left: 4%;
+  animation: hoverOut 0.4s ease forwards;
+}
+
+#recipe-form__ingredient-inputs > button {
+  position: unset;
+  margin-left: 0;
+}
+
+#recipe-form__direction-inputs > button:hover,
+#recipe-form__ingredient-inputs > button:hover {
+  background-color: gold;
+  animation: hoverIn 0.4s ease forwards;
+}
+
+/* --- Delete li Buttons --- */
+
+#recipe-form__direction-inputs > li > button,
+#recipe-form__ingredient-inputs > li > button {
+  position: unset;
+  width: 10%;
+  height: auto;
+  background-color: transparent;
+  backdrop-filter: none;
+  animation: hoverOut 0.4s ease forwards;
+  margin-left: 0;
+  color: yellowgreen;
+}
+
+#recipe-form__ingredient-inputs > li > button {
+  font-size: 2em;
+}
+
+#recipe-form__direction-inputs > li > button:hover,
+#recipe-form__ingredients-inputs > li > button:hover {
+  color: white;
+}
+
+/* --- Image URL --- */
+
+.wrap--ul > figure {
+  display: flex;
+  position: absolute;
+  background-color: rgb(156, 156, 156);
+  top: 15%;
+  width: 100%;
+  height: 85%;
+}
+
+/* --- Overlay --- */
+
+.overlay-down {
+  animation: swoopDown .15s ease-in-out forwards .15s;
+}
