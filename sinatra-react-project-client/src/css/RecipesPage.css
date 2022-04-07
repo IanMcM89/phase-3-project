@@ -29,7 +29,7 @@
   height: 100%;
   margin: auto 0;
   transform: translatex(-1000px);
-  animation: slideRight .4s ease-in-out forwards .4s;
+  animation: slideRight .6s ease-in-out forwards .6s;
 }
 
 #main-header-content h2 {
@@ -138,16 +138,4 @@
   margin: 0;
   transform: translateY(300px);
   animation: slideUp .5s ease-in-out forwards .5s;
-}
-
-.overlay-up {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: auto;
-  z-index: 9;
-  background-color: var(--contrast-color);
-  animation: swoopUp .15s ease-in-out forwards .15s;
 }
