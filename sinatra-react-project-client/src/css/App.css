@@ -27,6 +27,30 @@ main {
   overflow: hidden;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  z-index: 9;
+  background-color: #3a9154;
+  animation: swoopRight .15s ease-in-out forwards .15s;
+}
+
+.overlay--left {
+  animation: swoopLeft .15s ease-in-out forwards .15s;
+}
+
+.overlay--up {
+  animation: swoopUp .15s ease-in-out forwards .15s;
+}
+
+.overlay--down {
+  animation: swoopDown .15s ease-in-out forwards .15s;
+}
+
 /* Scrollbar */
 
   /* Firefox */

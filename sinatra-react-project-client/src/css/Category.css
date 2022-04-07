@@ -90,17 +90,5 @@
     height: 15%;
     margin: 0;
     transform: translatex(-300px);
-    animation: slideIn .8s ease-in-out forwards .8s;
-}
-
-.overlay-right {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: auto;
-    z-index: 9;
-    background-color: var(--contrast-color);
-    animation: swoopRight .15s ease-in-out forwards .15s;
+    animation: slideUp .5s ease-in-out forwards .5s;
 }
