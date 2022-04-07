@@ -43,7 +43,10 @@ function Recipe() {
     <main>
       <div className="recipe">
         <div className="wrapper wrap--content-left">
-          <h1>{recipe.title}</h1>
+          <div className="recipe__header">
+            <img src="../images/icons/logo.png" alt="Leaf Icon"/>
+            <h1>{recipe.title}</h1>
+          </div>
           <h2>{category}</h2>
           <p>{recipe.description}</p>
           <div className="divider">
@@ -69,7 +72,7 @@ function Recipe() {
           </div>
         </div>
       </div>
-      <div className="overlay-up"/>
+      <div className="overlay overlay--right"/>
     </main>
   );
 }

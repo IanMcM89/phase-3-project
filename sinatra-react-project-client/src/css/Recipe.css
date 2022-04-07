@@ -6,12 +6,12 @@
     rgb(108, 170, 106) 10%, 
     rgb(28, 89, 40) 50%
   );
-  border-radius: 0 35px 35px 35px;
+  border-radius: 35px;
   display: inherit;
   width: 80%;
   height: 85%;
   margin: auto;
-  animation: appear .6s ease-in forwards;
+  animation: appear .8s ease-in forwards;
   overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
 
 /* --- headers --- */
 
-.wrap--content-left h1, 
+.recipe__header, 
 .wrap--content-left h2, 
 .wrap--content-left h3,
 .wrap--content-left p {
@@ -53,21 +53,33 @@
   margin: 0;
 }
 
-.wrap--content-left h1 {
+.recipe__header {
+  flex-direction: row;
   background-color: lightgrey;
-  color: gray;
   border-bottom: solid 4px yellowgreen;
-  font-size: 1.8rem;
   height: 15%;
   transform: translatey(-1000px);
-  animation: slideDown .4s ease-in-out forwards .4s;
+  animation: slideDown .4s ease-in-out forwards .2s;
+}
+
+.recipe__header h1 {
+  font-size: 1.8rem;
+  color: gray;
+  transform: none;
+  animation: none;
+}
+
+.recipe__header img {
+  width: auto;
+  height: 80%;
+  margin: auto 0;
 }
 
 .wrap--content-left h2 {
   color: rgb(173, 231, 58);
   height: 10%;
   transform: translatex(-1000px);
-  animation: slideRight .6s ease-in-out forwards .6s;
+  animation: slideRight .5s ease-in-out forwards .3s;
 }
 
 .wrap--content-left h3 {
@@ -77,12 +89,12 @@
 
 .wrap--content-left p {
   font-family: 'Times New Roman', Times, serif;
-  justify-content: center;
+  color: lightgray;
   font-size: 1.1rem;
   height: auto;
   margin: auto;
   transform: translatex(-1000px);
-  animation: slideRight .8s ease-in-out forwards .8s;
+  animation: slideRight .6s ease-in-out forwards .4s;
 }
 
 /* --- wrappers --- */
@@ -119,7 +131,7 @@
     height: 60%;
     margin-top: 4%;
     transform: translatey(1000px);
-    animation: slideUp .2s ease-in-out forwards .2s;
+    animation: slideUp .4s ease-in-out forwards .4s;
   }
 
   .wrap--ul {
@@ -132,8 +144,6 @@
     height: 100%;
     width: 100%;
     overflow: hidden;
-    transform: translatex(1000px);
-    animation: slideIn .3s ease-in-out forwards .3s;
   }
 
   /* --- dividers --- */
@@ -141,6 +151,7 @@
 .divider {
   position: relative;
   height: 1px;
+  animation: appear 1s ease-in forwards;
 }
 
   .divider div {
