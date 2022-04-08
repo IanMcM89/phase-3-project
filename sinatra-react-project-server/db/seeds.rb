@@ -1,6 +1,6 @@
 puts "🌱 Seeding categories..."
 
-Category.create(name: "Poultry & Fowl")
+Category.create(name: "Poultry")
 Category.create(name: "Pork")
 Category.create(name: "Beef, Lamb & Game")
 Category.create(name: "Seafood")
@@ -163,114 +163,6 @@ Recipe.create(
         "Chop fruit to preferred size.",
         "Combine ingredients in your favorite glass, drizzle with coconut and chocolate sauce and enjoy!"
     ],
-)
-
-Recipe.create(
-    title: "Ground Chicken Tacos", 
-    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
-    category_id: 1,
-)
-
-Recipe.create(
-    title: "Hearty Pork Loin Stew", 
-    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
-    category_id: 2,
-)
-
-Recipe.create(
-    title: "Spaghetti and Meat Sauce", 
-    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
-    category_id: 3,
-)
-
-Recipe.create(
-    title: "Shrimp Pasta in Spicy Garlic Sauce", 
-    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
-    category_id: 4,
-)
-
-Recipe.create(
-    title: "Vegan Red Beans and Rice", 
-    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
-    category_id: 5,
-)
-
-Recipe.create(
-    title: "Tropical Fruit Parfait", 
-    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
-    category_id: 6,
-)
-
-Recipe.create(
-    title: "Ground Chicken Tacos", 
-    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
-    category_id: 1,
-)
-
-Recipe.create(
-    title: "Hearty Pork Loin Stew", 
-    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
-    category_id: 2,
-)
-
-Recipe.create(
-    title: "Spaghetti and Meat Sauce", 
-    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
-    category_id: 3,
-)
-
-Recipe.create(
-    title: "Shrimp Pasta in Spicy Garlic Sauce", 
-    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
-    category_id: 4,
-)
-
-Recipe.create(
-    title: "Vegan Red Beans and Rice", 
-    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
-    category_id: 5,
-)
-
-Recipe.create(
-    title: "Tropical Fruit Parfait", 
-    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
-    category_id: 6,
-)
-
-Recipe.create(
-    title: "Ground Chicken Tacos", 
-    image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
-    category_id: 1,
-)
-
-Recipe.create(
-    title: "Hearty Pork Loin Stew", 
-    image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
-    category_id: 2,
-)
-
-Recipe.create(
-    title: "Spaghetti and Meat Sauce", 
-    image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
-    category_id: 3,
-)
-
-Recipe.create(
-    title: "Shrimp Pasta in Spicy Garlic Sauce", 
-    image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
-    category_id: 4,
-)
-
-Recipe.create(
-    title: "Vegan Red Beans and Rice", 
-    image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
-    category_id: 5,
-)
-
-Recipe.create(
-    title: "Tropical Fruit Parfait", 
-    image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
-    category_id: 6,
 )
 
 puts "✅ Done seeding!"
