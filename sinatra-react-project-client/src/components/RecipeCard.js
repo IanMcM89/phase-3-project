@@ -10,7 +10,7 @@ function RecipeCard({ recipe }) {
   return (
     <div className="recipe-card" onClick={handleClick}>
       <div className="recipe-card-content" style={{backgroundImage: `url(${recipe.image_url})`}}>
-        <p className="recipe-card-p">{recipe.title}</p>
+        <p>{recipe.title}</p>
       </div>
     </div>
   );

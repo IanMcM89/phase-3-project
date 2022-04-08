@@ -14,7 +14,7 @@ function CategoriesPage({ categorizeRecipes, setCategorySelected }) {
     })
   },[]); 
 
-  //Returns Recipe component for each recipe in fetched recipe data:
+  //Return Recipe component for each recipe in fetched recipe data:
   const displayCategories = categories.map(category => 
     <CategoryCard 
       key={category.id} 
@@ -25,17 +25,15 @@ function CategoriesPage({ categorizeRecipes, setCategorySelected }) {
   );
 
   return (
-    <main className="app-main">
-      <div className="main-container">
+    <main>
+      <div className="main-header-wrapper">
         <div className="main-header">
-          <div id="main-header-content">
-            <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-            <h2>Categories</h2>
-          </div>
+          <img src="./images/icons/logo.png" alt="Leaf Icon"/>
+          <h2>Categories</h2>
         </div>
-        <div id="category-grid">
-          {displayCategories}
-        </div>
+      </div>
+      <div id="category-grid">
+        {displayCategories}
       </div>
       <div className="overlay overlay--right"/>
     </main>

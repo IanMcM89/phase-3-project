@@ -13,7 +13,7 @@ function Recipe() {
     fetch(`http://localhost:9292${window.location.pathname}`)
       .then(r => r.json())
       .then(recipeData => {
-        //Fetch category for recipe:
+        //Fetch category for recipe by ID:
         fetch(`http://localhost:9292/categories/${recipeData.category_id}`)
           .then(r => r.json())
           .then(categoryData => setCategory(categoryData.name))

@@ -24,10 +24,12 @@ function App() {
     })
   },[getRecipes]);
 
+  //Filter recipes by category selected:
   const categorizeRecipes = category => {
     setRecipes(recipes.filter(recipe => recipe.category_id === category.id));
   }
 
+  //Re-fetch recipe data and remove selected category:
   const resetRecipes = () => {
     setGetRecipes(!getRecipes);
     setCategorySelected(false);
@@ -35,12 +37,13 @@ function App() {
 
   return (
     <div id="app">
-      <Header
-        resetRecipes={resetRecipes}
-      />
+      <Header resetRecipes={resetRecipes}/>
       <Switch>
         <Route exact path="/create">
-          <RecipeForm recipes={recipes}/>
+          <RecipeForm 
+            recipes={recipes}
+            resetRecipes={resetRecipes}
+            />
         </Route>
         <Route exact path="/recipes/:id">
           <Recipe/>

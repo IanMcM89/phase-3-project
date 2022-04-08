@@ -30,22 +30,21 @@ function RecipesPage({ recipes, categorySelected }) {
   const displayRecipes = recipesToBeDisplayed.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}/>)
 
   return (
-    <main className="app-main">
-      <div className="main-container">
+    <main>
+      <div className="main-header-wrapper">
         <div className="main-header">
-          <div id="main-header-content">
-            <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-            <h2>{headerText}</h2>
-          </div>
-          <Search 
-            recipes={recipes}
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-            setSearchResults={setSearchResults}/>
+          <img src="./images/icons/logo.png" alt="Leaf Icon"/>
+          <h2>{headerText}</h2>
         </div>
-        <div id="recipe-grid">
-          {displayRecipes}
-        </div>
+        <Search 
+          recipes={recipes}
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          setSearchResults={setSearchResults}
+        />
+      </div>
+      <div id="recipe-grid">
+        {displayRecipes}
       </div>
       <div className="overlay overlay--up"/>
     </main>

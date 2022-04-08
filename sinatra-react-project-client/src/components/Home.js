@@ -4,25 +4,25 @@ import '../css/Home.css';
 function Home() {
   return (
     <main>
-      <div className="home">
-        <div className="wrap--home-content">
-          <div className="wrap--home-content-inner">
-            <div className="title">
+      <div id="home">
+        <div className="home-wrapper">
+          <div className="home-wrapper-inner">
+            <div className="home-title">
               <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-              <h1>Recipes.</h1>
+              <h1>My Recipes.</h1>
             </div>
-            <div className="par">
-              <h2>Lorem ipsum dolor sit amet.</h2>
+            <div className="home-par">
+              <h2>Recipe collection by Ian.</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                Looking for recipes without all the 'filler?' My personal collection of quick and easy recipes is ever growing and provides simple directions and ingredients to make your life in the kitchen easier. Click the button below to choose a category and to get started.
               </p>
             </div>
-            <div className="btns">
+            <div className="home-btn">
               <a href="/categories" className="button">Get Started</a>
             </div>
           </div>
         </div>
-        <div className="container_img"/>
+        <div className="home-img"/>
       </div>
       <div className="overlay overlay--left"></div>
     </main>

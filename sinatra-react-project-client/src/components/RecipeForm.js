@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../css/RecipeForm.css";
 
-function RecipeForm({ recipes }) {
+function RecipeForm({ recipes, resetRecipes }) {
   const [showIngredients, setShowIngredients] = useState(false);
   const [showImageURL, setShowImageURL] = useState(false);
   const [formError, setFormError] = useState('');
@@ -29,7 +29,7 @@ function RecipeForm({ recipes }) {
     setFormData({ ...formData, [key]: array });
   }
 
-  //Render newly added li to DOM tree:
+  //Render newly added li to DOM:
   const displayLi = (key, value) => formData[key].map((item, index) => {
     return (
       <li key={index}>
@@ -48,7 +48,7 @@ function RecipeForm({ recipes }) {
   //Control text inputs:
   const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  //Control text area li inputs:
+  //Control li textArea inputs:
   const handleLiChange = (e, index) => {
     const array = formData[e.target.name].slice();
     array[index] = e.target.value;
@@ -67,7 +67,7 @@ function RecipeForm({ recipes }) {
       setFormError('Ingredient fields cannot be left blank');
     } else {
       postRecipe();
-      return history.push(`/recipes`);
+      return history.push(`/recipes/${recipes.length += 1}`);
     }
   }
 
@@ -81,11 +81,12 @@ function RecipeForm({ recipes }) {
       body: JSON.stringify(formData),
     })
       .then(r => r.json())
+      .then(resetRecipes())
   }
 
   return (
     <main>
-      <form id="recipe-form" className="recipe" onSubmit={handleSubmit}>
+      <form id="form" className="recipe" onSubmit={handleSubmit}>
         <div className="wrapper wrap--content-left">
           <div id="recipe-form__title-input">
             <img

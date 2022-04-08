@@ -1,5 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --secondary-color: transparent;
+  --contrast-color: #3a9154;
+}
+
+/* --- App Main Header --- */
+
+.main-header-wrapper {
+  display: flex;
+  width: 80%;
+  height: 10%;
+  margin: 1% auto 0 auto;
+  overflow: hidden;
+}
+
+.main-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: auto 0;
+  transform: translatex(-1000px);
+  animation: slideRight .6s ease-in-out forwards .6s;
+}
+
+.main-header h2 {
+  color: forestgreen;
+  display: flex;
+  font-family: inherit;
+  font-size: 25px;
+  font-weight: bolder;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+}
+
+.main-header img {
+  width: auto;
+  height: 80%;
+}
+
+
+/* --- App Main Body --- */
+
 #app {
-  background: rgb(0,0,0);
+  background: white center / cover;
   background-image: linear-gradient(
     90deg, 
     transparent 0%, 
@@ -8,8 +60,6 @@
     transparent 100%), 
     url("/public/images/background-2.jpg"
   );
-  background-size: cover;
-  background-position: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -18,21 +68,46 @@
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   position: absolute;
-  bottom: 0;
   width: 100vw;
   height: 90vh;
+  bottom: 0;
   margin: 0;
   overflow: hidden;
 }
 
+.main-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  position: relative;
+  font-family: 
+    -apple-system, 
+    BlinkMacSystemFont, 
+    'Segoe UI', 
+    Roboto, 
+    Oxygen, 
+    Ubuntu, 
+    Cantarell, 
+    'Open Sans', 
+    'Helvetica Neue', 
+    sans-serif;
+  transition: all .8s ease;
+}
+
+/* --- Overlays --- */
+
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0 0 0 0;
   height: auto;
   z-index: 9;
   background-color: #3a9154;
@@ -51,12 +126,12 @@ main {
   animation: swoopDown .15s ease-in-out forwards .15s;
 }
 
-/* Scrollbar */
+/* --- Scrollbar --- */
 
   /* Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: lightgray lightgray;
+    scrollbar-color: #b0b0b03f greenyellow;
   }
 
   /* Chrome, Edge, and Safari */
@@ -75,7 +150,7 @@ main {
     border: 1px none lightgreen;
   }
 
-/* Animation Keyframes */
+/* --- Animation Keyframes --- */
 
 @keyframes slideIn {
   0% {

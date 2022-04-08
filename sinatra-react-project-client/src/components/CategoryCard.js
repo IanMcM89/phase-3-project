@@ -13,8 +13,8 @@ function CategoryCard(props) {
 
   return (
     <div className="category-card" onClick={handleClick}>
-      <div className="category-card-content">
-        <p className="category-card-p">{props.category.name}</p>
+      <div className="category-card-content" onClick={handleClick}>
+        <p>{props.category.name}</p>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-/* --- form main --- */
+/* --- Form Main --- */
 
-#recipe-form {
+#form {
   border-radius: 35px;
   height: 85%;
   margin: auto;
 }
 
-/* --- leaf logo --- */
+/* --- Form Leaf Logo --- */
 
 .wrap--content-left img {
   display: flex;
@@ -17,7 +17,7 @@
   margin: auto 0;
 }
 
-/* --- Inputs --- */
+/* --- Form Inputs --- */
 
 #recipe-form__title-input,
 #recipe-form__title-input > input,
@@ -177,7 +177,7 @@
   height: 100%;
 }
 
-/* --- post btn --- */
+/* --- Post Btn --- */
 
 #recipe-form__post-button {
   background-color: goldenrod;
@@ -252,7 +252,7 @@
   color: white;
 }
 
-/* --- form error --- */
+/* --- Form Error --- */
 
 #recipe-form__error {
   position: absolute;
@@ -269,10 +269,4 @@
   color: red;
   transform: translatey(-1000px);
   animation: slideDown .4s ease-in-out forwards .2s;
-}
-
-/* --- Overlay --- */
-
-.overlay-down {
-  animation: swoopDown .15s ease-in-out forwards .15s;
 }

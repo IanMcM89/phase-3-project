@@ -13,10 +13,9 @@ function Search(props) {
   };
 
   return (
-    <div id="main-header-search">
-      <img className="search-icon" src="./images/icons/search.png" alt="Search Icon" />
+    <div id="search">
+      <img src="./images/icons/search.png" alt="Search Icon" />
       <input
-        className="search-input"
         type="text"
         name="search"
         placeholder="Search Recipes"

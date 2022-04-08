@@ -1,3 +1,5 @@
+/* --- Category Grid --- */
+
 #category-grid {
     display: flex;
     flex-wrap: wrap;
@@ -9,49 +11,54 @@
     overflow-y: auto;
 }
 
-#category-grid .category-card {
+/* --- Category Card --- */
+
+.category-card {
     display: flex;
     align-items: center;
+    align-content: center;
     width: 15%;
     height: auto;
     margin: 5px;
-    align-content: center;
-    overflow: hidden;
     animation: appear 1.0s ease forwards;
+    overflow: hidden;
 }
 
-#category-grid .category-card:nth-child(2n) {
+.category-card:nth-child(2n) {
     animation: appear 1.5s ease forwards;
 }
 
-#category-grid .category-card:nth-child(3n) {
+.category-card:nth-child(3n) {
     animation: appear 2s ease forwards;
 }
 
-#category-grid .category-card:nth-child(4n) {
+.category-card:nth-child(4n) {
     animation: appear 2.5s ease forwards;
 }
 
-#category-grid .category-card:nth-child(5n) {
+.category-card:nth-child(5n) {
     animation: appear 3s ease forwards;
 }
 
-#category-grid .category-card:nth-child(6n) {
+.category-card:nth-child(6n) {
     animation: appear 3.5s ease forwards;
 }
 
 .category-card-content {
-    background-image: url("/public/images/categories/poultry.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("/public/images/categories/poultry.jpg") center / cover;
     display: flex;
     align-items: center;
+    align-content: center;
+    color: white;
+    font-family: 
+        'Segoe UI', 
+        Tahoma, 
+        Geneva, 
+        Verdana, 
+        sans-serif;
     width: 100%;
     height: 100%;
     margin: 5px;
-    align-content: center;
     overflow: hidden;
     animation: hoverOut 0.4s ease forwards;
 }
@@ -60,26 +67,26 @@
     animation: hoverIn 0.4s ease forwards;
 }
 
-#category-grid .category-card:nth-child(2n) .category-card-content {
+.category-card:nth-child(2n) .category-card-content {
     background-image: url("/public/images/categories/pork.jpg");
 }
 
-#category-grid .category-card:nth-child(3n) .category-card-content {
+.category-card:nth-child(3n) .category-card-content {
     background-image: url("/public/images/categories/beef.jpg");
 }
-#category-grid .category-card:nth-child(4n) .category-card-content {
+.category-card:nth-child(4n) .category-card-content {
     background-image: url("/public/images/categories/seafood.jpg");
 }
 
-#category-grid .category-card:nth-child(5n) .category-card-content {
+.category-card:nth-child(5n) .category-card-content {
     background-image: url("/public/images/categories/vegan.jpg");
 }
 
-#category-grid .category-card:nth-child(6n) .category-card-content {
+.category-card:nth-child(6n) .category-card-content {
     background-image: url("/public/images/categories/dessert.jpg");
 }
 
-.category-card-p {
+.category-card p {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,3 +1,5 @@
+/* --- Header --- */
+
 header {
   background-color: rgb(118, 173, 103);
   outline: chartreuse 5px solid;
@@ -10,14 +12,16 @@ header {
   margin: 0;
 }
 
-#header__buttons {
+/* --- Header Btns --- */
+
+.header-buttons {
   color: white;
   display: flex;
   justify-content: center;
   width: 50%;
 }
 
-#header__buttons button {
+.header-buttons button {
   display: flex;
   border: none;
   text-decoration: none;
@@ -33,6 +37,6 @@ header {
   transition: 0.3s;
 }
 
-#header__buttons button:hover {
+.header-buttons button:hover {
   background-color: forestgreen;
 }

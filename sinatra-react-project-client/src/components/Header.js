@@ -18,7 +18,7 @@ function Header({ resetRecipes }) {
 
   return (
     <header>
-      <div id="header__buttons">
+      <div className="header-buttons">
         <button onClick={handleClick}>Home</button>
         <button onClick={handleClick}>Categories</button>
         <button onClick={handleClick}>Recipes</button>
