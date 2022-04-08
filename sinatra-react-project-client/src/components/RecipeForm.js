@@ -2,26 +2,25 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../css/RecipeForm.css";
 
-function RecipeForm({ onSubmit }) {
-  const [isHidden, setIsHidden] = useState(true);
-  // const [formError, setFormError] = useState('');
+function RecipeForm({ recipes }) {
+  const [showIngredients, setShowIngredients] = useState(false);
+  const [showImageURL, setShowImageURL] = useState(false);
+  const [formError, setFormError] = useState('');
   const [formData, setFormData] = useState({
     title: '',
     image_url: '',
-    category_id: '',
+    category_id: 1,
     description: '',
-    ingredients: ['','','','','','',''],
-    steps: ['','','']
+    ingredients: ['', '', '', '', ''],
+    steps: ['', '', '']
   });
 
   const history = useHistory();
 
-  console.log(formData);
-
   //Add new li to directions/ingredients ul:
   const addLi = Key => {
     formData[Key].push('');
-    setFormData({...formData, [Key]: formData[Key]});
+    setFormData({ ...formData, [Key]: formData[Key] });
   }
 
   //Delete li from directions/ingredients ul:
@@ -41,7 +40,7 @@ function RecipeForm({ onSubmit }) {
           value={item}
           onChange={(e) => handleLiChange(e, index)}
         />
-        <button onClick={() => deleteLi(key, index)}>-</button>
+        <button type="button" onClick={() => deleteLi(key, index)}>-</button>
       </li>
     )
   });
@@ -56,14 +55,20 @@ function RecipeForm({ onSubmit }) {
     setFormData({ ...formData, [e.target.name]: array });
   }
 
-  const handleSubmit = (e) => {
+  //Sumbut recipe and redirect to recipe page:
+  const handleSubmit = e => {
     e.preventDefault();
 
-    // if (Object.values(formData).includes('')) {
-    //   return setFormError('All input fields must be filled before posting');
-    // } else {
-    //   return postRecipe() & history.push("/recipes");
-    // }
+    if (Object.values(formData).includes('')) {
+      setFormError('All input fields must be filled before posting');
+    } else if (formData.steps.includes('')) {
+      setFormError('Step fields cannot be left blank');
+    } else if (formData.ingredients.includes('')) {
+      setFormError('Ingredient fields cannot be left blank');
+    } else {
+      postRecipe();
+      return history.push(`/recipes`);
+    }
   }
 
   //Send post request to '/recipes':
@@ -76,17 +81,17 @@ function RecipeForm({ onSubmit }) {
       body: JSON.stringify(formData),
     })
       .then(r => r.json())
-      .then(newRecipe => onSubmit(newRecipe))
   }
-
-  const handleClick = () => setIsHidden(!isHidden);
 
   return (
     <main>
       <form id="recipe-form" className="recipe" onSubmit={handleSubmit}>
         <div className="wrapper wrap--content-left">
           <div id="recipe-form__title-input">
-            <img src="./images/icons/logo.png" alt="Leaf Icon"/>
+            <img
+              src="./images/icons/logo.png"
+              alt="Leaf Icon"
+            />
             <input
               type="text"
               name="title"
@@ -122,30 +127,43 @@ function RecipeForm({ onSubmit }) {
             <h3>Directions:</h3>
             <ol id="recipe-form__direction-inputs">
               {displayLi("steps", "step")}
-              <button onClick={() => addLi("steps")}>+</button>
+              <button type="button" onClick={() => addLi("steps")}>+</button>
             </ol>
           </div>
         </div>
         <div className="wrapper wrap--content-right">
           <div className="wrapper wrap--ul">
-            <button onClick={handleClick}>Ingredients List</button>
-            <figure style={{backgroundImage: `url(${''})`}} alt=''>
-              <img src="" alt=""/>
-            </figure>
-            <div className={isHidden ? "ingredients--hide" : "ingredients--show"}>
+            <button type="button" onMouseEnter={() => setShowIngredients(!showIngredients)}>Ingredients List</button>
+            <div id="recipe-form__image-input" style={{ backgroundImage: `url(${formData.image_url})` }} alt=''>
+              <div onMouseEnter={() => setShowImageURL(!showImageURL)} onMouseLeave={() => setShowImageURL(!showImageURL)}>
+                <input className={showImageURL ? "image-url--show" : "image-url--hide"}
+                  type="text"
+                  name="image_url"
+                  placeholder="Image URL:"
+                  value={formData.image_url}
+                  onChange={handleChange}
+                />
+                <img
+                  id="camera-icon"
+                  src="./images/icons/camera.png"
+                  alt="Camera Icon"
+                />
+              </div>
+              <button id="recipe-form__post-button">Submit</button>
+            </div>
+            <div className={showIngredients ? "ingredients--show" : "ingredients--hide"} onMouseLeave={() => setShowIngredients(!showIngredients)}>
               <div className="recipe__overlay overlay--ingredients" />
               <ul id="recipe-form__ingredient-inputs">
                 {displayLi("ingredients", "ingredient")}
-                <button onClick={() => addLi("ingredients")}>+</button>
+                <button type="button" onClick={() => addLi("ingredients")}>+</button>
               </ul>
             </div>
           </div>
         </div>
-        {/* <div className="form__error">
-          <p>{formError}</p>
-          <input type="submit" value="Post Recipe" />
-        </div> */}
       </form>
+      <div id="recipe-form__error">
+        <p>{formError}</p>
+      </div>
       <div className="overlay overlay--down" />
     </main>
   );
