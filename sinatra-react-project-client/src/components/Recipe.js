@@ -37,8 +37,6 @@ function Recipe() {
     )
   });
 
-  const handleClick = () => setIsHidden(!isHidden);
-
   return (
     <main>
       <div className="recipe">
@@ -62,8 +60,8 @@ function Recipe() {
         </div>
         <div className="wrapper wrap--content-right">
           <div className="wrapper wrap--ul" style={{backgroundImage: `url(${recipe.image_url})`}} alt={`${recipe.title}`}>
-            <button onClick={handleClick}>Ingredients List</button>
-            <div className={isHidden ? "ingredients--hide" : "ingredients--show"}>
+            <button onMouseEnter={() => setIsHidden(!isHidden)}>Ingredients List</button>
+            <div className={isHidden ? "ingredients--hide" : "ingredients--show"} onMouseLeave={() => setIsHidden(!isHidden)}>
               <div className="recipe__overlay overlay--ingredients"/>
               <ul>
                 {liIngredients}

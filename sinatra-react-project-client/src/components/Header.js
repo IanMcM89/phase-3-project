@@ -2,12 +2,18 @@ import React from "react";
 import { useHistory } from 'react-router-dom';
 import "../css/Header.css";
 
-function Header() {
+function Header({ resetRecipes }) {
+
   const history = useHistory();
 
   //On button click, redirect path and reset recipes:
-  function handleClick(e) {
-    history.push(e.target.textContent.includes("Home") ? "/" : `/${(e.target.textContent).toLowerCase()}`);
+  const handleClick = e => {
+    if (e.target.textContent.includes("Home")) {
+      history.push("/"); 
+    } else {
+      history.push(`/${(e.target.textContent).toLowerCase()}`);
+    }
+    return resetRecipes();
   }
 
   return (

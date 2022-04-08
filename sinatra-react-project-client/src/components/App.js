@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Route, Switch } from 'react-router-dom';
+import CategoriesPage from './CategoriesPage';
+import RecipesPage from './RecipesPage';
+import RecipeForm from './RecipeForm.js';
+import Recipe from './Recipe';
 import Header from './Header';
 import Home from './Home';
-import RecipesPage from './RecipesPage';
-import CategoriesPage from './CategoriesPage';
-import { Route, Switch } from 'react-router-dom';
 import '../css/App.css';
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [headerText, setHeaderText] = useState();
-  const [searchValue, setSearchValue] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [getRecipes, setGetRecipes] = useState(false)
+  const [getRecipes, setGetRecipes] = useState(false);
+  const [categorySelected, setCategorySelected] = useState(false);
 
   //Fetch recipes:
   useEffect(() => {
@@ -19,58 +19,46 @@ function App() {
     .then(r => r.json())
     .then(recipeData => {
       setRecipes(recipeData);
-      console.log('Recipes fetched')
+      setGetRecipes(false);
+      console.log("GET http://localhost:9292/recipes");
     })
-    .then(setHeaderText("All Recipes"));
   },[getRecipes]);
+
+  const categorizeRecipes = category => {
+    setRecipes(recipes.filter(recipe => recipe.category_id === category.id));
+  }
 
   const resetRecipes = () => {
     setGetRecipes(!getRecipes);
-    setSearchValue('');
-  }
-
-  const searchRecipes = input => {
-    const filteredRecipes = recipes.filter(
-      recipe => recipe.title.toLowerCase().includes(input.toLowerCase())
-    );
-    setSearchValue(input);
-    setSearchResults(filteredRecipes);
-    setHeaderText(input !== '' ? `${filteredRecipes.length} results for '${input}'` : "All Recipes");
-  };
-
-  const categorizeRecipes = category => {
-    const categorizedRecipes = recipes.filter(
-      recipe => recipe.category_id === category.id
-    );
-    setRecipes(categorizedRecipes);
-    setHeaderText(`${categorizedRecipes.length} results for '${category.name}' category`);
+    setCategorySelected(false);
   }
 
   return (
     <div id="app">
       <Header
         resetRecipes={resetRecipes}
-        setSearchValue={setSearchValue}
       />
       <Switch>
+        <Route exact path="/create">
+          <RecipeForm recipes={recipes}/>
+        </Route>
         <Route exact path="/recipes/:id">
-        <Route/>
+          <Recipe/>
         </Route>
         <Route exact path="/recipes">
           <RecipesPage 
             recipes={recipes} 
-            headerText={headerText}
-            searchValue={searchValue}
-            searchResults={searchResults}
-            searchRecipes={searchRecipes}
+            setRecipes={setRecipes}
+            categorySelected={categorySelected}
           />
         </Route>
         <Route exact path="/categories">
-          <CategoriesPage 
+          <CategoriesPage
             categorizeRecipes={categorizeRecipes}
-        />
+            setCategorySelected={setCategorySelected}
+          />
         </Route>
-        <Route path="/home">
+        <Route path="/">
           <Home/>
         </Route>
       </Switch>

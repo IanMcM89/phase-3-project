@@ -5,9 +5,7 @@ import '../css/RecipesPage.css';
 function RecipeCard({ recipe }) {
   const history = useHistory();
 
-  const handleClick = () => {
-    history.push(`/recipes/${recipe.id}`);
-  }
+  const handleClick = () => history.push(`/recipes/${recipe.id}`);
 
   return (
     <div className="recipe-card" onClick={handleClick}>

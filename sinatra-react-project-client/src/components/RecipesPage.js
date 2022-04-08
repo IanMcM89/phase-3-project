@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import RecipeCard from './RecipeCard';
 import Search from "./Search"
-import '../css/Recipe.css';
+import '../css/RecipesPage.css';
 
-function RecipesPage(props) {
-  //Returns Recipe component for each recipe in fetched recipe data:
-  const mapRecipes = () => {
-    if (props.searchValue !== '') {
-      return props.searchResults.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+function RecipesPage({ recipes, categorySelected }) {
+  const [searchValue, setSearchValue] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [headerText, setHeaderText] = useState("All Recipes");
+  const [recipesToBeDisplayed, setRecipesToBeDisplayed] = useState([]);
+
+  useEffect(() => {
+    renderRecipes();
+  });
+
+  //Render recipes depending on category selected and/or if a search value is entered:
+  const renderRecipes = () => {
+    if (searchValue === '') {
+      categorySelected ? 
+        setHeaderText(`${recipes.length} results for ${categorySelected} category`) : 
+        setHeaderText("All Recipes");
+      return setRecipesToBeDisplayed(recipes);
     } else {
-      return props.recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+      setHeaderText(`${searchResults.length} Results for '${searchValue}'`);
+      return setRecipesToBeDisplayed(searchResults);
     }
   }
-
-  const recipesToBeDisplayed = mapRecipes();
+  
+  //Return Recipe component for each recipe in fetched recipe data:
+  const displayRecipes = recipesToBeDisplayed.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}/>)
 
   return (
     <main className="app-main">
@@ -21,18 +35,19 @@ function RecipesPage(props) {
         <div className="main-header">
           <div id="main-header-content">
             <img src="./images/icons/logo.png" alt="Leaf Icon"/>
-            <h2>{props.headerText}</h2>
+            <h2>{headerText}</h2>
           </div>
-          <Search
-            searchValue={props.searchValue}
-            searchRecipes={props.searchRecipes}
-          />
+          <Search 
+            recipes={recipes}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            setSearchResults={setSearchResults}/>
         </div>
         <div id="recipe-grid">
-          {recipesToBeDisplayed}
+          {displayRecipes}
         </div>
       </div>
-      <div className="overlay-up "/>
+      <div className="overlay overlay--up"/>
     </main>
   );
 }
