@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2022_03_18_152102) do
   create_table "recipes", force: :cascade do |t|
     t.string "title"
     t.string "image_url"
-    t.string "created_by"
     t.integer "category_id"
+    t.boolean "is_favorited"
+    t.string "prep_time"
+    t.string "cook_time"
     t.text "description"
     t.text "ingredients", default: "[]"
     t.text "steps", default: "[]"

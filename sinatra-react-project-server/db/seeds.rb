@@ -13,6 +13,9 @@ Recipe.create(
     title: "Ground Chicken Tacos", 
     image_url: "http://localhost:3000/images/recipes/chicken-tacos.jpg",
     category_id: 1,
+    is_favorited: false,
+    prep_time: "10 Min",
+    cook_time: "15 Min",
     description: "If you're short on time and feel like mexican than these quick and easy chicken tacos are the meal youve been looking for. Who doesn't like tacos?!",
     ingredients: [
         "1 lb Ground Chicken", 
@@ -39,6 +42,9 @@ Recipe.create(
     title: "Hearty Pork Loin Stew", 
     image_url: "http://localhost:3000/images/recipes/pork-stew.jpg",
     category_id: 2,
+    is_favorited: false,
+    prep_time: "10 Min",
+    cook_time: "4-6 Hours",
     description: "This easy slow cooked pork tenderloin is a set-it-and-forget-it meal that's worth the wait!",
     ingredients: [
         "1 Pork Tenderloin", 
@@ -63,9 +69,12 @@ Recipe.create(
 )
 
 Recipe.create(
-    title: "Spaghetti and Meat Sauce", 
+    title: "Spaghetti with Meat Sauce", 
     image_url: "http://localhost:3000/images/recipes/spaghetti.jpg",
     category_id: 3,
+    is_favorited: false,
+    prep_time: "10 Min",
+    cook_time: "20 Min",
     description: "Delicious spaghetti noodles in a zesty tomato and beef sauce. Bon Appetit!",
     ingredients: [
         "12-ounce Spaghetti Noodles", 
@@ -89,6 +98,9 @@ Recipe.create(
     title: "Shrimp Pasta in Spicy Garlic Sauce", 
     image_url: "http://localhost:3000/images/recipes/shrimp-pasta.jpg",
     category_id: 4,
+    is_favorited: false,
+    prep_time: "5 Min",
+    cook_time: "15 Min",
     description: "This quick and delicious shrimp pasta dish is super easy to make and great for when you're short on time.",
     ingredients: [
         "1 lb Bag of Cooked Baby Shrimp", 
@@ -119,6 +131,9 @@ Recipe.create(
     title: "Vegan Red Beans and Rice", 
     image_url: "http://localhost:3000/images/recipes/red-beans.jpg",
     category_id: 5,
+    is_favorited: false,
+    prep_time: "10 Min",
+    cook_time: "2-4 Hours",
     description: "You've got to try my meatless take on this southern, Cajun favorite!",
     ingredients: [
         "1 lb Bag of White Rice", 
@@ -149,6 +164,9 @@ Recipe.create(
     title: "Tropical Fruit Parfait", 
     image_url: "http://localhost:3000/images/recipes/fruit-parfairt.jpg",
     category_id: 6,
+    is_favorited: false,
+    prep_time: "10 Min",
+    cook_time: "-",
     description: "This delicious tropical fruit parfeit will remind you of white sand and seabreezes and is a perfect way to end a meal.",
     ingredients: [
         "4 Cups Coconut Non-Fat Yogurt", 

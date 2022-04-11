@@ -34,43 +34,94 @@ class ApplicationController < Sinatra::Base
   # Recipe Routes
 
   get '/recipes' do
-    Recipe.all.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+    Recipe.all.to_json(only: [
+      :id, 
+      :title, 
+      :image_url, 
+      :category_id, 
+      :is_favorited, 
+      :cook_time, 
+      :prep_time, 
+      :description, 
+      :ingredients, 
+      :steps
+    ])
   end
 
   get '/recipes/:id' do
-    Recipe.find(params[:id]).to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+    Recipe.find(params[:id]).to_json(only: [
+      :id, 
+      :title, 
+      :image_url, 
+      :category_id, 
+      :is_favorited, 
+      :cook_time, 
+      :prep_time, 
+      :description, 
+      :ingredients, 
+      :steps
+    ])
   end
 
   post '/recipes' do
     recipe = Recipe.create(
       title: params[:title],
       image_url: params[:image_url],
-      created_by: params[:created_by],
       category_id: params[:category_id],
+      is_favorited: params[:is_favorited],
+      cook_time: params[:cook_time],
+      prep_time: params[:prep_time],
       description: params[:description],
       ingredients: params[:ingredients],
       steps: params[:steps]
     )
-    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+    recipe.to_json(only: [
+      :id, 
+      :title, 
+      :image_url, 
+      :category_id, 
+      :is_favorited, 
+      :cook_time, 
+      :prep_time, 
+      :description, 
+      :ingredients, 
+      :steps
+    ])
   end
 
   patch '/recipes/:id' do
     recipe = Recipe.find(params[:id])
     recipe.update(
-      title: params[:title],
-      image_url: params[:image_url],
-      created_by: params[:created_by],
-      category_id: params[:category_id],
-      description: params[:description],
-      ingredients: params[:ingredients],
-      steps: params[:steps]
+      is_favorited: params[:is_favorited],
     )
-    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+    recipe.to_json(only: [
+      :id, 
+      :title, 
+      :image_url, 
+      :category_id, 
+      :is_favorited, 
+      :cook_time, 
+      :prep_time, 
+      :description, 
+      :ingredients, 
+      :steps
+    ])
   end
 
   delete "/recipes/:id" do
     recipe = Recipe.find(params[:id])
     recipe.destroy
-    recipe.to_json(only: [:id, :title, :image_url, :created_by, :category_id, :description, :ingredients, :steps])
+    recipe.to_json(only: [
+      :id, 
+      :title, 
+      :image_url, 
+      :category_id, 
+      :is_favorited, 
+      :cook_time, 
+      :prep_time, 
+      :description, 
+      :ingredients, 
+      :steps
+    ])
   end
 end
