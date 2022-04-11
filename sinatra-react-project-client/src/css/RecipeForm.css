@@ -19,11 +19,11 @@
 
 /* --- Form Inputs --- */
 
-#recipe-form__title-input,
-#recipe-form__title-input > input,
-#recipe-form__category-input,
-#recipe-form__category-input > select,
-#recipe-form__description-input {
+#form__title-input,
+#form__title-input > input,
+#form__category-input,
+#form__category-input > select,
+#form__description-input {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -40,9 +40,9 @@
   animation: slideDown .4s ease-in-out forwards .2s;
 }
 
-#recipe-form__title-input > input,
-#recipe-form__category-input,
-#recipe-form__description-input {
+#form__title-input > input,
+#form__category-input,
+#form__description-input {
   background-color: transparent;
   border: none;
   height: 10%;
@@ -52,7 +52,11 @@
 
 /* Title */
 
-#recipe-form__title-input > input {
+#form__title-input {
+  padding-left: 2%;
+}
+
+#form__title-input > input {
   font-weight: bold;
   width: 90%;
   height: 75%;
@@ -63,7 +67,7 @@
 
 /* Category */
 
-#recipe-form__category-input > select {
+#form__category-input > select {
   background-color: transparent;
   border: none;
   color: rgb(173, 231, 58);
@@ -76,20 +80,20 @@
   animation: none;
 }
 
-#recipe-form__category-input > select > option {
+#form__category-input > select > option {
   color: black;
   font-size: 0.5em;
 }
 
 /* Description */
 
-#recipe-form__description-input {
+#form__description-input {
   padding: 0 5% 0 5%;
   margin: 0;
   animation: slideRight .3s ease-in-out forwards .3s;
 }
 
-#recipe-form__description-input > textarea {
+#form__description-input > textarea {
   font-family: 'Times New Roman', Times, serif;
   font-size: 1.1rem;
   border: none;
@@ -102,18 +106,18 @@
 
 /* Directions & Ingredients */
 
-#recipe-form__direction-inputs > li {
+#form__direction-inputs > li {
   width: 100%;
 }
 
-#recipe-form__ingredient-inputs > li {
+#form__ingredient-inputs > li {
   display: flex;
   flex-direction: row;
   padding: 6px 0;
 }
 
-#recipe-form__direction-inputs > li > textarea,
-#recipe-form__ingredient-inputs > li > textarea {
+#form__direction-inputs > li > textarea,
+#form__ingredient-inputs > li > textarea {
   display: flex;
   color: gray;
   font: 1.1rem Arial;
@@ -124,7 +128,7 @@
   overflow-y: hidden;
 }
 
-#recipe-form__ingredient-inputs > li > textarea {
+#form__ingredient-inputs > li > textarea {
   background-color: lightgray;
   width: 90%;
   height: 75%;
@@ -132,13 +136,13 @@
 
 /* --- Image URL --- */
 
-#recipe-form > .wrap--content-right > .wrap--ul {
+#form > .wrap--content-right > .wrap--ul {
   background: rgb(32, 32, 32) url("/public/images/icons/plate.png") no-repeat center;
   background-size: 300px;
   border-radius: 0 0 35px;
 }
 
-#recipe-form__image-input {
+#form__image-input {
   display: flex;
   background: transparent center / cover no-repeat;
   width: 100%;
@@ -146,7 +150,7 @@
   right: 0;
 }
 
-#recipe-form__image-input > div {
+#form__image-input > div {
   position: absolute;
   display: inherit;
   width: 80%;
@@ -154,8 +158,8 @@
   bottom: 0;
 }
 
-#recipe-form__image-input > div > .image-url--show,
-#recipe-form__image-input > div > .image-url--hide {
+#form__image-input > div > .image-url--show,
+#form__image-input > div > .image-url--hide {
   display: inherit;
   border: none;
   background-color: white;
@@ -168,7 +172,7 @@
 	transform: translate(0px, 0px);
 }
 
-#recipe-form__image-input > div > .image-url--hide {
+#form__image-input > div > .image-url--hide {
 	transform: translate(0px, 1000px);
 }
 
@@ -177,9 +181,26 @@
   height: 100%;
 }
 
+/* --- Cook/Prep Time Inputs --- */
+
+.recipe__times input {
+  display: flex;
+  align-items: center;
+  font-family: arial;
+  border: none;
+  width: 80%;
+  height: 50%;
+  margin: 0 auto 0 auto;
+  border-bottom: solid 2px gray;
+}
+
+.recipe__times input:first-child {
+  border: none;
+}
+
 /* --- Post Btn --- */
 
-#recipe-form__post-button {
+#form__post-button {
   background-color: goldenrod;
   backdrop-filter: none;
   font-size: 1.3rem;
@@ -193,15 +214,15 @@
   margin: auto;
 }
 
-#recipe-form__post-button:hover {
+#form__post-button:hover {
   background-color: yellowgreen;
 }
 
 /* --- Add li Buttons --- */
 
-#recipe-form__direction-inputs > button,
-#recipe-form__ingredient-inputs > button,
-#recipe-form__direction-inputs > li > button {
+#form__direction-inputs > button,
+#form__ingredient-inputs > button,
+#form__direction-inputs > li > button {
   position: unset;
   display: flex;
   width: 30px;
@@ -218,21 +239,21 @@
   animation: hoverOut 0.4s ease forwards;
 }
 
-#recipe-form__ingredient-inputs > button {
+#form__ingredient-inputs > button {
   position: unset;
   margin-left: 0;
 }
 
-#recipe-form__direction-inputs > button:hover,
-#recipe-form__ingredient-inputs > button:hover {
+#form__direction-inputs > button:hover,
+#form__ingredient-inputs > button:hover {
   background-color: gold;
   animation: hoverIn 0.4s ease forwards;
 }
 
 /* --- Delete li Buttons --- */
 
-#recipe-form__direction-inputs > li > button,
-#recipe-form__ingredient-inputs > li > button {
+#form__direction-inputs > li > button,
+#form__ingredient-inputs > li > button {
   position: unset;
   width: 10%;
   height: auto;
@@ -243,18 +264,18 @@
   color: yellowgreen;
 }
 
-#recipe-form__ingredient-inputs > li > button {
+#form__ingredient-inputs > li > button {
   font-size: 2em;
 }
 
-#recipe-form__direction-inputs > li > button:hover,
-#recipe-form__ingredients-inputs > li > button:hover {
+#form__direction-inputs > li > button:hover,
+#form__ingredients-inputs > li > button:hover {
   color: white;
 }
 
 /* --- Form Error --- */
 
-#recipe-form__error {
+#form__error {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -264,7 +285,7 @@
   overflow: hidden;
 }
 
-#recipe-form__error p {
+#form__error p {
   font-family: Arial, Helvetica, sans-serif;
   color: red;
   transform: translatey(-1000px);

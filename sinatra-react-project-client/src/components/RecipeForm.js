@@ -10,8 +10,10 @@ function RecipeForm({ recipes, resetRecipes }) {
     title: '',
     image_url: '',
     category_id: 1,
+    prep_time: '',
+    cook_time: '',
     description: '',
-    ingredients: ['', '', '', '', ''],
+    ingredients: ['', '', '', '', '', ''],
     steps: ['', '', '']
   });
 
@@ -88,7 +90,7 @@ function RecipeForm({ recipes, resetRecipes }) {
     <main>
       <form id="form" className="recipe" onSubmit={handleSubmit}>
         <div className="wrapper wrap--content-left">
-          <div id="recipe-form__title-input">
+          <div id="form__title-input">
             <img
               src="./images/icons/logo.png"
               alt="Leaf Icon"
@@ -101,7 +103,7 @@ function RecipeForm({ recipes, resetRecipes }) {
               onChange={handleChange}
             />
           </div>
-          <div id="recipe-form__category-input">
+          <div id="form__category-input">
             <select name="category_id" onChange={handleChange}>
               <option value={1}>Poultry and Fowl</option>
               <option value={2}>Pork</option>
@@ -111,7 +113,7 @@ function RecipeForm({ recipes, resetRecipes }) {
               <option value={6}>Desserts and Sweets</option>
             </select>
           </div>
-          <div id="recipe-form__description-input">
+          <div id="form__description-input">
             <textarea
               name="description"
               placeholder="Recipe description..."
@@ -126,7 +128,7 @@ function RecipeForm({ recipes, resetRecipes }) {
           <div className="wrapper wrap--ol">
             <div className="recipe__overlay overlay--directions" />
             <h3>Directions:</h3>
-            <ol id="recipe-form__direction-inputs">
+            <ol id="form__direction-inputs">
               {displayLi("steps", "step")}
               <button type="button" onClick={() => addLi("steps")}>+</button>
             </ol>
@@ -135,7 +137,7 @@ function RecipeForm({ recipes, resetRecipes }) {
         <div className="wrapper wrap--content-right">
           <div className="wrapper wrap--ul">
             <button type="button" onMouseEnter={() => setShowIngredients(!showIngredients)}>Ingredients List</button>
-            <div id="recipe-form__image-input" style={{ backgroundImage: `url(${formData.image_url})` }} alt=''>
+            <div id="form__image-input" style={{ backgroundImage: `url(${formData.image_url})` }} alt=''>
               <div onMouseEnter={() => setShowImageURL(!showImageURL)} onMouseLeave={() => setShowImageURL(!showImageURL)}>
                 <input className={showImageURL ? "image-url--show" : "image-url--hide"}
                   type="text"
@@ -150,11 +152,27 @@ function RecipeForm({ recipes, resetRecipes }) {
                   alt="Camera Icon"
                 />
               </div>
-              <button id="recipe-form__post-button">Submit</button>
+              <button id="form__post-button">Submit</button>
             </div>
             <div className={showIngredients ? "ingredients--show" : "ingredients--hide"} onMouseLeave={() => setShowIngredients(!showIngredients)}>
               <div className="recipe__overlay overlay--ingredients" />
-              <ul id="recipe-form__ingredient-inputs">
+              <div className="recipe__times">
+                <input
+                  type="text"
+                  name="prep_time"
+                  placeholder="Prep Time: ex. 10 Min"
+                  value={formData.prep_time}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="cook_time"
+                  placeholder="Cook Time: ex. 30 Min"
+                  value={formData.cook_time}
+                  onChange={handleChange}
+                />
+              </div>
+              <ul id="form__ingredient-inputs">
                 {displayLi("ingredients", "ingredient")}
                 <button type="button" onClick={() => addLi("ingredients")}>+</button>
               </ul>
@@ -162,7 +180,7 @@ function RecipeForm({ recipes, resetRecipes }) {
           </div>
         </div>
       </form>
-      <div id="recipe-form__error">
+      <div id="form__error">
         <p>{formError}</p>
       </div>
       <div className="overlay overlay--down" />
