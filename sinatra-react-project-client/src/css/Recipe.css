@@ -58,6 +58,7 @@
   background-color: lightgrey;
   border-bottom: solid 4px yellowgreen;
   height: 15%;
+  padding-left: 2%;
   transform: translatey(-1000px);
   animation: slideDown .4s ease-in-out forwards .2s;
 }
@@ -209,17 +210,17 @@
   background-color: white;
   width: 100%;
   height: 100%;
-  padding: 5% 10% 5% 10%;
+  padding: 2% 10% 5% 10%;
 }
 
 .ingredients--show, .ingredients--hide {
   position: absolute;
   border-radius: 0 0 35px 0;
-  border: solid gray 1px;
   top: 15%;
   left: 0;
   width: 100%;
   height: 85%;
+  margin: 0;
   transition: .35s all;
 	transform: translate(0px, 0px);
 }
@@ -253,7 +254,9 @@
     white 2%, 
     transparent 10%
   );
+  margin: 0;
   pointer-events: none;
+
   z-index: 2;
 }
 
@@ -289,6 +292,42 @@
   counter-increment: none;
   font-size: 16px;
   padding: 12px 0;
+}
+
+/* --- Prep/Cook Times --- */
+
+.recipe__times {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 15%;
+}
+
+.recipe__times p {
+  color: forestgreen;
+  display: flex;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+  width: 80%;
+  height: 50%;
+  margin: 0 auto 0 auto;
+  border-bottom: solid 2px gray;
+}
+
+.recipe__times p:first-child {
+  border: none;
+}
+
+.recipe__times p:first-child::before {
+  content: "Prep Time:\00a0";
+  color: black;
+}
+
+.recipe__times p:nth-child(2)::before {
+  content: "Cook Time:\00a0";
+  color: black;
 }
 
 /* --- checkbox --- */

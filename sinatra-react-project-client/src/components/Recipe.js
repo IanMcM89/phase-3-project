@@ -30,8 +30,8 @@ function Recipe() {
       <li key={ingredient}>
         <label className="label label--checkbox">
           {ingredient}
-          <input type="checkbox"/>
-          <div className="checkbox__indicator"/>
+          <input type="checkbox" />
+          <div className="checkbox__indicator" />
         </label>
       </li>
     )
@@ -42,16 +42,16 @@ function Recipe() {
       <div className="recipe">
         <div className="wrapper wrap--content-left">
           <div className="recipe__header">
-            <img src="../images/icons/logo.png" alt="Leaf Icon"/>
+            <img src="../images/icons/logo.png" alt="Leaf Icon" />
             <h1>{recipe.title}</h1>
           </div>
           <h2>{category}</h2>
           <p>{recipe.description}</p>
           <div className="divider">
-            <div className="divider div--transparent div--dot"/>
+            <div className="divider div--transparent div--dot" />
           </div>
           <div className="wrapper wrap--ol">
-            <div className="recipe__overlay overlay--directions"/>
+            <div className="recipe__overlay overlay--directions" />
             <h3>Directions:</h3>
             <ol>
               {liDirections}
@@ -59,10 +59,14 @@ function Recipe() {
           </div>
         </div>
         <div className="wrapper wrap--content-right">
-          <div className="wrapper wrap--ul" style={{backgroundImage: `url(${recipe.image_url})`}} alt={`${recipe.title}`}>
+          <div className="wrapper wrap--ul" style={{ backgroundImage: `url(${recipe.image_url})` }} alt={`${recipe.title}`}>
             <button onMouseEnter={() => setIsHidden(!isHidden)}>Ingredients List</button>
             <div className={isHidden ? "ingredients--hide" : "ingredients--show"} onMouseLeave={() => setIsHidden(!isHidden)}>
-              <div className="recipe__overlay overlay--ingredients"/>
+              <div className="recipe__overlay overlay--ingredients" />
+              <div className="recipe__times">
+                <p>{recipe.prep_time}</p>
+                <p>{recipe.cook_time}</p>
+              </div>
               <ul>
                 {liIngredients}
               </ul>
@@ -70,7 +74,7 @@ function Recipe() {
           </div>
         </div>
       </div>
-      <div className="overlay overlay--right"/>
+      <div className="overlay overlay--right" />
     </main>
   );
 }
