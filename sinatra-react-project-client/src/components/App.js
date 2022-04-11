@@ -35,6 +35,11 @@ function App() {
     setCategorySelected(false);
   }
 
+  //Remove recipe card from the grid:
+  const deleteRecipe = deletedRecipeId => {
+    setRecipes(recipes.filter(recipe => recipe.id !== deletedRecipeId));
+  }
+
   return (
     <div id="app">
       <Header resetRecipes={resetRecipes}/>
@@ -52,6 +57,7 @@ function App() {
           <RecipesPage 
             recipes={recipes} 
             setRecipes={setRecipes}
+            deleteRecipe={deleteRecipe}
             categorySelected={categorySelected}
           />
         </Route>
