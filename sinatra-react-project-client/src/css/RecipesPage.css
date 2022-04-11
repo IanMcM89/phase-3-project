@@ -70,14 +70,30 @@
   animation: slideUp .5s ease-in-out forwards .5s;
 }
 
+/* --- Icons --- */
+
+.recipe-card-icons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: transparent;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  margin: 0;
+  z-index: 9;
+}
+
 /* --- Searchbar --- */
 
 #search {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 50%;
-  margin: auto;
+  width: 25%;
+  margin: auto 0 auto 0;
   transform: translatey(-1000px);
   animation: slideDown .6s ease-in-out forwards .6s;
 }
@@ -92,5 +108,73 @@
 #search input {
   border: green solid 2px;
   height: 100%;
-  width: 40%;
+  width: 100%;
+}
+
+/* --- Favorites Switch --- */
+
+.main-header h4 {
+  color: #40a042;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: fit-content;
+  margin: auto 1% auto auto;
+  transform: translatey(-1000px);
+  animation: slideDown .6s ease-in-out forwards .6s;
+}
+
+.favorites-switch {
+  position: relative;
+  display: inline-block;
+  width: 5%;
+  height: 32%;
+  margin: auto 1% auto 0;
+  transform: translatey(-1000px);
+  animation: slideDown .6s ease-in-out forwards .6s;
+}
+
+/* Hide default HTML checkbox */
+.favorites-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.favorites-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.favorites-slider:before {
+  position: absolute;
+  content: "";
+  height: 70%;
+  width: 45%;
+  left: 5%;
+  bottom: 15%;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.favorites-switch input:checked + .favorites-slider {
+  background-color: #40a042;
+}
+
+.favorites-switch input:focus + .favorites-slider {
+  box-shadow: 0 0 1px yellowgreen;
+}
+
+.favorites-switch input:checked + .favorites-slider:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
 }
