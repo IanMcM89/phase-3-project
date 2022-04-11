@@ -3,40 +3,58 @@ import RecipeCard from './RecipeCard';
 import Search from "./Search"
 import '../css/RecipesPage.css';
 
-function RecipesPage({ recipes, categorySelected }) {
+function RecipesPage({ recipes, categorySelected, deleteRecipe }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [favoritesFirst, setFavoritesFirst] = useState(false);
   const [headerText, setHeaderText] = useState("All Recipes");
   const [recipesToBeDisplayed, setRecipesToBeDisplayed] = useState([]);
 
   useEffect(() => {
-    renderRecipes();
-  });
-
-  //Render recipes depending on category selected and/or if a search value is entered:
-  const renderRecipes = () => {
-    if (searchValue === '') {
-      categorySelected ? 
-        setHeaderText(`${recipes.length} results for ${categorySelected} category`) : 
+    const decideHeadertext = () => {
+      categorySelected ?
+        setHeaderText(`${recipes.length} results for ${categorySelected} category`) :
         setHeaderText("All Recipes");
+    }
+
+    if (searchValue === '' && !favoritesFirst) {
+      decideHeadertext()
       return setRecipesToBeDisplayed(recipes);
-    } else {
+    } else if (searchValue === '' && favoritesFirst) {
+      decideHeadertext();
+      const sortedRecipes = [...recipes];
+      return setRecipesToBeDisplayed(sortedRecipes.sort((x, y) => y.is_favorited - x.is_favorited));
+    } else if (searchValue !== '' && !favoritesFirst) {
       setHeaderText(`${searchResults.length} Results for '${searchValue}'`);
       return setRecipesToBeDisplayed(searchResults);
+    } else {
+      const sortedResults = [...searchResults];
+      setHeaderText(`${searchResults.length} Results for '${searchValue}'`);
+      return setRecipesToBeDisplayed(sortedResults.sort((x, y) => y.is_favorited - x.is_favorited));
     }
-  }
-  
+  }, [recipes, categorySelected, favoritesFirst, searchValue, searchResults]);
+
   //Return Recipe component for each recipe in fetched recipe data:
-  const displayRecipes = recipesToBeDisplayed.map(recipe => <RecipeCard key={recipe.id} recipe={recipe}/>)
+  const displayRecipes = recipesToBeDisplayed.map(recipe =>
+    <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+  )
 
   return (
     <main>
       <div className="main-header-wrapper">
         <div className="main-header">
-          <img src="./images/icons/logo.png" alt="Leaf Icon"/>
+          <img src="./images/icons/logo.png" alt="Leaf Icon" />
           <h2>{headerText}</h2>
+          <h4>Favorites:</h4>
+          <label className="favorites-switch">
+            <input 
+              type="checkbox"
+              onClick={() => setFavoritesFirst(!favoritesFirst)}
+              />
+              <span class="favorites-slider"/>
+          </label>
         </div>
-        <Search 
+        <Search
           recipes={recipes}
           searchValue={searchValue}
           setSearchValue={setSearchValue}
@@ -46,7 +64,7 @@ function RecipesPage({ recipes, categorySelected }) {
       <div id="recipe-grid">
         {displayRecipes}
       </div>
-      <div className="overlay overlay--up"/>
+      <div className="overlay overlay--up" />
     </main>
   );
 }
