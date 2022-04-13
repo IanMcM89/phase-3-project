@@ -20,7 +20,6 @@ function App() {
     .then(recipeData => {
       setRecipes(recipeData);
       setGetRecipes(false);
-      console.log("GET http://localhost:9292/recipes");
     })
   },[getRecipes]);
 
@@ -40,15 +39,21 @@ function App() {
     setRecipes(recipes.filter(recipe => recipe.id !== deletedRecipeId));
   }
 
+  //Update recipe grid on favorites click:
+  const updateRecipes = patchedRecipe => {
+    const i = recipes.findIndex(recipe => recipe.id === patchedRecipe.id)
+    recipes[i] = patchedRecipe;
+    setRecipes(recipes.map(recipe => recipe));
+  }
+
+  console.log(recipes)
+
   return (
     <div id="app">
       <Header resetRecipes={resetRecipes}/>
       <Switch>
         <Route exact path="/create">
-          <RecipeForm 
-            recipes={recipes}
-            resetRecipes={resetRecipes}
-            />
+          <RecipeForm resetRecipes={resetRecipes}/>
         </Route>
         <Route exact path="/recipes/:id">
           <Recipe/>
@@ -58,6 +63,7 @@ function App() {
             recipes={recipes} 
             setRecipes={setRecipes}
             deleteRecipe={deleteRecipe}
+            updateRecipes={updateRecipes}
             categorySelected={categorySelected}
           />
         </Route>

@@ -3,7 +3,7 @@ import RecipeCard from './RecipeCard';
 import Search from "./Search"
 import '../css/RecipesPage.css';
 
-function RecipesPage({ recipes, categorySelected, deleteRecipe }) {
+function RecipesPage({ recipes, categorySelected, deleteRecipe, updateRecipes }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [favoritesFirst, setFavoritesFirst] = useState(false);
@@ -18,25 +18,28 @@ function RecipesPage({ recipes, categorySelected, deleteRecipe }) {
     }
 
     if (searchValue === '' && !favoritesFirst) {
-      decideHeadertext()
+      decideHeadertext();
       return setRecipesToBeDisplayed(recipes);
     } else if (searchValue === '' && favoritesFirst) {
       decideHeadertext();
-      const sortedRecipes = [...recipes];
-      return setRecipesToBeDisplayed(sortedRecipes.sort((x, y) => y.is_favorited - x.is_favorited));
+      return setRecipesToBeDisplayed([...recipes].sort((x, y) => y.is_favorited - x.is_favorited));
     } else if (searchValue !== '' && !favoritesFirst) {
       setHeaderText(`${searchResults.length} Results for '${searchValue}'`);
       return setRecipesToBeDisplayed(searchResults);
     } else {
-      const sortedResults = [...searchResults];
       setHeaderText(`${searchResults.length} Results for '${searchValue}'`);
-      return setRecipesToBeDisplayed(sortedResults.sort((x, y) => y.is_favorited - x.is_favorited));
+      return setRecipesToBeDisplayed([...searchResults].sort((x, y) => y.is_favorited - x.is_favorited));
     }
   }, [recipes, categorySelected, favoritesFirst, searchValue, searchResults]);
 
   //Return Recipe component for each recipe in fetched recipe data:
   const displayRecipes = recipesToBeDisplayed.map(recipe =>
-    <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+    <RecipeCard 
+      key={recipe.id} 
+      recipe={recipe} 
+      deleteRecipe={deleteRecipe} 
+      updateRecipes={updateRecipes}
+    />
   )
 
   return (

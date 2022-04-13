@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import '../css/RecipesPage.css';
 
-function RecipeCard({ recipe, deleteRecipe }) {
+function RecipeCard({ recipe, deleteRecipe, updateRecipes }) {
   const [isFavorited, setIsFavorited] = useState(recipe.is_favorited);
   const history = useHistory();
 
@@ -33,7 +33,7 @@ function RecipeCard({ recipe, deleteRecipe }) {
       }),
     })
     .then(r => r.json())
-    .then(patchedRecipe => console.log(patchedRecipe))
+    .then(patchedRecipe => updateRecipes(patchedRecipe))
 
     return setIsFavorited(!isFavorited);
   }
