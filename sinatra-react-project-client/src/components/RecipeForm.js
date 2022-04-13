@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "../css/RecipeForm.css";
 
-function RecipeForm({ recipes, resetRecipes }) {
+function RecipeForm({ resetRecipes }) {
   const [showIngredients, setShowIngredients] = useState(false);
   const [showImageURL, setShowImageURL] = useState(false);
   const [formError, setFormError] = useState('');
@@ -10,6 +10,7 @@ function RecipeForm({ recipes, resetRecipes }) {
     title: '',
     image_url: '',
     category_id: 1,
+    is_favorited: false,
     prep_time: '',
     cook_time: '',
     description: '',
@@ -69,11 +70,10 @@ function RecipeForm({ recipes, resetRecipes }) {
       setFormError('Ingredient fields cannot be left blank');
     } else {
       postRecipe();
-      return history.push(`/recipes/${recipes.length += 1}`);
     }
   }
 
-  //Send post request to '/recipes':
+  //Send POST request to '/recipes':
   const postRecipe = () => {
     fetch('http://localhost:9292/recipes', {
       method: "POST",
@@ -84,6 +84,16 @@ function RecipeForm({ recipes, resetRecipes }) {
     })
       .then(r => r.json())
       .then(resetRecipes())
+      .then(getNewRecipe())
+  }
+
+  //Route to newly created recipe page after POST:
+  const getNewRecipe = () => {
+    fetch("http://localhost:9292/recipes")
+    .then(r => r.json())
+    .then(recipeData => {
+      history.push(`/recipes/${recipeData.pop().id}`)
+    })
   }
 
   return (
@@ -105,7 +115,7 @@ function RecipeForm({ recipes, resetRecipes }) {
           </div>
           <div id="form__category-input">
             <select name="category_id" onChange={handleChange}>
-              <option value={1}>Poultry and Fowl</option>
+              <option value={1}>Poultry</option>
               <option value={2}>Pork</option>
               <option value={3}>Beef, Lamb and Game</option>
               <option value={4}>Seafood</option>
