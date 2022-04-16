@@ -54,7 +54,7 @@ function RecipesPage({ recipes, categorySelected, deleteRecipe, updateRecipes })
               type="checkbox"
               onClick={() => setFavoritesFirst(!favoritesFirst)}
               />
-              <span class="favorites-slider"/>
+              <span className="favorites-slider"/>
           </label>
         </div>
         <Search
