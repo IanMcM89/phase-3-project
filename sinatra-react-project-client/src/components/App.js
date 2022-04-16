@@ -46,8 +46,6 @@ function App() {
     setRecipes(recipes.map(recipe => recipe));
   }
 
-  console.log(recipes)
-
   return (
     <div id="app">
       <Header resetRecipes={resetRecipes}/>
