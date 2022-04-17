@@ -22,6 +22,10 @@ class RecipesController < Sinatra::Base
     Recipe.find(params[:id]).to_json(only: RECIPE)
   end
 
+  get '/recipes/:id/category' do
+    Recipe.find(params[:id]).category.name.to_json()
+  end
+
   post '/recipes' do
     recipe = Recipe.create(
       title: params[:title],

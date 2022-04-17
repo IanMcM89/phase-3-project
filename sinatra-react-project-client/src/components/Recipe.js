@@ -13,14 +13,15 @@ function Recipe() {
     fetch(`http://localhost:9292${window.location.pathname}`)
       .then(r => r.json())
       .then(recipeData => {
-        //Fetch category for recipe by ID:
-        fetch(`http://localhost:9292/categories/${recipeData.category_id}`)
-          .then(r => r.json())
-          .then(categoryData => setCategory(categoryData.name))
-          .then(setRecipe(recipeData))
-          .then(setDirections(recipeData.steps))
-          .then(setIngredients(recipeData.ingredients))
+        setRecipe(recipeData)
+        setDirections(recipeData.steps)
+        setIngredients(recipeData.ingredients)
       })
+
+    //Fetch category for recipe:
+    fetch(`http://localhost:9292${window.location.pathname}/category`)
+    .then(r => r.json())
+    .then(categoryData => setCategory(categoryData))
   }, []);
 
   const liDirections = directions.map(step => <li key={step}>{step}</li>);
