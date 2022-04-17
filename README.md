@@ -1,6 +1,6 @@
 # My Recipes by Ian
 
-Welcome to My Recipes by Ian! I grew tired of searching Google for recipes that I typically make every week and scrolling through all the extra content, filler and back stories that other authors tend to add to their recipe pages before getting to "the good stuff" ie the ingredients and directions. My Recipes is a simple collection of all the quick and easy recipes that I use frequently designed to save time in the kitchen.
+Welcome to My Recipes by Ian! I grew tired of searching Google for recipes that I typically make every week and scrolling through all the extra content, filler and back stories that other authors tend to add to their recipe pages before getting to "the good stuff" ie the ingredients and directions. My Recipes is a simple collection of all the quick and easy recipes that I use frequently, designed to save time in the kitchen.
 
 ## Features
 
